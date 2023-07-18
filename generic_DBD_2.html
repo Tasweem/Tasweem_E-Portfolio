@@ -68,27 +68,25 @@
             margin-top: 20px;
         }
     </style>
-</head>
-<body>
-    <h2 onclick="scrollToSection('dataCleaning')">Data cleaning</h2>
-
-    <h2 onclick="scrollToSection('dataCleaningAndAutomating')">Data cleaning and automating Data Collection</h2>
-
-    <h2 onclick="scrollToSection('apiSecurityRequirements')">API Security requirements</h2>
-
-    <p id="dataCleaning">This is the Data cleaning text.</p>
-
-    <p id="dataCleaningAndAutomating">This is the Data cleaning and automating Data Collection text.</p>
-
-    <p id="apiSecurityRequirements">This is the API Security requirements text.</p>
-
     <script>
         function scrollToSection(sectionId) {
             var section = document.getElementById(sectionId);
             section.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
+</head>
+<body>
+    <h2 onclick="scrollToSection('dataCleaning')">Data cleaning</h2>
+    <p id="dataCleaning">This is the Data cleaning text.</p>
+
+    <h2 onclick="scrollToSection('dataCleaningAndAutomating')">Data cleaning and automating Data Collection</h2>
+    <p id="dataCleaningAndAutomating">This is the Data cleaning and automating Data Collection text.</p>
+
+    <h2 onclick="scrollToSection('apiSecurityRequirements')">API Security requirements</h2>
+    <p id="apiSecurityRequirements">This is the API Security requirements text.</p>
 </body>
+
+
 
 
 
