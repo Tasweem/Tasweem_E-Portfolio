@@ -60,7 +60,22 @@
 									</p>
 									<h3 style="color: #CFA7F6;">Activity:</h3>
 
-									<p>Instructions:Write a web scraping script in Python using the key word 'Data Scientist' and parse this data into either an XML or JSON file. Perform the web scraping with the beautifulsoup4 and Request program modules.</p>
+									<p>Instructions: Write a web scraping script in Python using the key word 'Data Scientist' and parse this data into either an XML or JSON file. Perform the web scraping with the beautifulsoup4 and Request program modules.</p>
+									  <p>The provided code demonstrates how to scrape book titles containing the phrase "Data Scientist" from the Goodreads website and save the data into both JSON and XML formats.</p>
+    									  <p>Code Functionality:</p>
+   									   <ol>
+    									       <li>Necessary modules are imported, including requests, json, xml.etree.ElementTree, and beautifulsoup4.</li>
+     									       <li>The URL for the search page on Goodreads is defined, and parameters for the search query are specified.</li>
+     									       <li>A GET request is sent to the search page using requests.get(), passing the URL and parameters.</li>
+     									       <li>The HTML content of the response is parsed using BeautifulSoup's BeautifulSoup class, creating a BeautifulSoup object named soup.</li>
+   									       <li>The book elements on the page are found using soup.find_all(), specifying the tag and class attributes that match the book elements.</li>
+   									       <li>An empty list named books_data is initialized to store the extracted book titles.</li>
+    									       <li>A loop iterates over each book element and extracts the title using find() and text.strip().</li>
+   							        	       <li>A dictionary is created for each book with the extracted title, and it is appended to the books_data list.</li>
+    									       <li>The scraped book data is saved into a JSON file using json.dump() and an XML file using ElementTree.</li>
+     									       <li>A success message is printed to indicate that the data has been successfully scraped and saved.</li>
+									      </ol>
+									<p></p>
 									<img src="images/web_scraping1.png" alt="" />
 									<img src="images/web_scraping2.png" alt="" />
 									
