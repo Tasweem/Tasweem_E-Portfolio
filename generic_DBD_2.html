@@ -52,6 +52,47 @@
 										<h1>Artefacts</h1>
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
+
+                                                                       <head>
+    <title>Subtitles and Navigation</title>
+    <style>
+        h2 {
+            color: #333;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        p {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2 onclick="toggleContent('dataCleaning')">Data cleaning</h2>
+    <p id="dataCleaning" style="display: none;">This is the data cleaning part.</p>
+
+    <h2 onclick="toggleContent('dataCleaningAndAutomating')">Data cleaning and automating Data Collection</h2>
+    <p id="dataCleaningAndAutomating" style="display: none;">This is the data cleaning and automating Data Collection part.</p>
+
+    <h2 onclick="toggleContent('apiSecurityRequirements')">API Security requirements</h2>
+    <p id="apiSecurityRequirements" style="display: none;">This is the API Security requirements part.</p>
+</body>  
+
+
 									
 									  <h2> &#10021; Web Scraping</h2>
 									      <p>The procedure of gathering data from the web is called web scraping. To put it another way, it's a programme that retrieves information from websites (often HTML pages) and parses it to find particular information.
