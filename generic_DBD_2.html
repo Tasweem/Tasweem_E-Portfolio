@@ -93,6 +93,30 @@
 									  <h2> &#10021; Data cleaning and automating Data Collection</h2>
 
 									  <h2> &#10021; API Security requirements</h2>
+									
+									            <p>An API, or application programming interface, is a set of defined rules that enable different applications to communicate with each other. It acts as an intermediary layer that processes data transfers between systems, allowing companies to open their application data and functionality to external third-party developers, business partners, and internal departments within their companies.</p>
+    									            <p>A firm can link several apps it uses in its daily operations using an API's definitions and protocols, which saves employee time and eliminates organizational silos that reduce innovation and collaboration. The API documentation simplifies application integration for developers by offering the interface for communication between apps.</p>
+  									            
+									             <h3 style="color: #CFA7F6;">Activity:</h3> 
+									
+									             <p>Instructions: As a team, evaluate the security requirements of an API of your choice and write a brief security requirements specification which mitigates against any risks associated with the API for enabling data sharing, scraping and connectivity between a program code written in Python and any of the following file formats/management systems (XML, JSON and SQL).</p>
+   									             <p>As a person working in the hospitality industry, we have evaluated the security requirements of the ReviewPro API, which has been widely used for years. ReviewPro is a tool used by nearly all hotels in the hotel industry to analyze online guest reviews and other guest feedback to enhance guest satisfaction and online reputation. Their API allows developers to integrate ReviewPro's data and functionality into their own applications.</p>
+  									             <p>According to the online API documentation, the ReviewPro API follows the following security requirements:</p>
+  									             <ul>
+  									                  <li><strong>Authentication:</strong> The ReviewPro API uses API keys for authenticating requests. These keys should be securely stored, never exposed publicly, and rotated periodically to prevent unauthorized access.</li>
+  									                  <li><strong>Data Encryption:</strong> All communication between the client and the API should be encrypted using HTTPS to protect the data during transit and guard against eavesdropping and man-in-the-middle attacks.</li>
+  									              </ul>
+ 									               <p>However, to mitigate any risks associated with the API, the following security requirements specification must be implemented:</p>
+ 									              <ul>
+  									                  <li><strong>Use a web application firewall:</strong> Implementing a WAF to help detect and block common web-based threats.</li>
+  									                  <li><strong>Rate Limiting:</strong> Implement rate limiting to prevent abuse and potential denial-of-service (DoS) attacks.</li>
+ 									                  <li><strong>Input Validation:</strong> Enforce thorough validation of all user inputs and API parameters to prevent injection attacks and other forms of malicious input.</li>
+ 									                  <li><strong>Secure Data Handling:</strong> Implement secure practices for data parsing and serialization to prevent data tampering or injection attacks.</li>
+    									                  <li><strong>Logging and Monitoring:</strong> Log and monitor all API requests and responses, and implement an anomaly detection system to identify potential security threats.</li>
+    									                  <li><strong>Access Control:</strong> Implement strong access control measures to ensure authorized data access and modification.</li>
+    									                  <li><strong>Regular Security Audits and Updates:</strong> Conduct regular security audits and promptly patch and update any identified security risks.</li>
+   									             </ul>
+   									             <p>Adherence to these security requirements will help ensure that the ReviewPro API securely handles data sharing, scraping, and connectivity between Python code and various file formats and management systems.</p>
 
 									<p></p><a href="digitalportfolioevaluationform.pdf">PDF for test</a><p>
 									<a href="https://github.com/nolaniyi/sample-portfolio"> A GitHub repository/site</a>
