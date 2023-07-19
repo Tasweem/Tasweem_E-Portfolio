@@ -53,46 +53,6 @@
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
-                                                                 
-							
-									  <h2> &#10021; Web Scraping</h2>
-									      <p>The procedure of gathering data from the web is called web scraping. To put it another way, it's a programme that retrieves information from websites (often HTML pages) and parses it to find particular information.
-									         Web scraping is used to gather data for market research, real estate analysis, corporate intelligence, and other purposes.
-									         The tool learned through this module is called beautifulsoup, is excellent at parsing collected HTML data.
-									       </p>
-									      <h3 style="color: #CFA7F6;">Activity:</h3>
-
-									                 <p>Instructions: Write a web scraping script in Python using the key word 'Data Scientist' and parse this data into either an XML or JSON file. Perform the web scraping with the beautifulsoup4 and Request program modules.</p>
-									                 <p>The provided code demonstrates how to scrape book titles containing the phrase "Data Scientist" from the Goodreads website and save the data into both JSON and XML formats.</p>
-    									                 <p>Code Functionality:</p>
-   									                 <ol>
-    									                     <li>Necessary modules are imported, including requests, json, xml.etree.ElementTree, and beautifulsoup4.</li>
-     									                     <li>The URL for the search page on Goodreads is defined, and parameters for the search query are specified.</li>
-     									                     <li>A GET request is sent to the search page using requests.get(), passing the URL and parameters.</li>
-     									                     <li>The HTML content of the response is parsed using BeautifulSoup's BeautifulSoup class, creating a BeautifulSoup object named soup.</li>
-   									                     <li>The book elements on the page are found using soup.find_all(), specifying the tag and class attributes that match the book elements.</li>
-   									                     <li>An empty list named books_data is initialized to store the extracted book titles.</li>
-    									                     <li>A loop iterates over each book element and extracts the title using find() and text.strip().</li>
-   							        	                     <li>A dictionary is created for each book with the extracted title, and it is appended to the books_data list.</li>
-    									                     <li>The scraped book data is saved into a JSON file using json.dump() and an XML file using ElementTree.</li>
-     									                     <li>A success message is printed to indicate that the data has been successfully scraped and saved.</li>
-									                    </ol>
-									              <p>The codes and results are shown below:</p>
-									              <img src="images/web_scraping1.png" alt="" />
-									              <img src="images/web_scraping2.png" alt="" />
-									              <p>The code allows for the scraping of book titles from the Goodreads search results, store them in JSON and XML files.</p>
-									              <p>Note that it is crucial to check and understand the website's terms of service to ensure compliance with scraping activities. Otherwise , it is recommended to use websites and APIs that provide structured data. </p>
-									
-									       <h3 style="color: #CFA7F6;">Practical Use:</h3>
-									              <p>As a person working in the hospitality industry, a very typical application of web scraping in this sector is to fetch data from portals for booking and rating holiday offers that are normally not accessible via APIs, such as the TripAdvisor portal mentioned above. These typically include product descriptions and pricing data provided by the portal operators as well as user-generated content, such as reviews. As a result, the data can be used to compare and analyse the quality of various vacation packages as well as, of course, track pricing, which, in turn, allow general trends in the industry to be observed and compared across different regions.</p> 
-									              <p>Searching for and extracting the needed text passages using text analysis functions, such as regular expressions, is usually a complex and time-consuming task that is also prone to errors. Therefore, specialized packages including “BeautifulSoup” is a good solution. </p>
-									              Then, the data must undergo several pre-processing steps to be used and analysed by means of a suitable method, for example, regression or classification for predictions.</p>
-									              <p></p>
-									              <p></p>
-
-									  <h2> &#10021; Data cleaning and Transformation </h2>
-									
-									  <h2> &#10021; Data cleaning and automating Data Collection</h2>
 
 									  <h2> &#10021; API Security requirements</h2>
 									
