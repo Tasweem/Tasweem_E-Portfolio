@@ -53,75 +53,48 @@
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
-                                                                 
-							
-									  <h2> &#10021; Web Scraping</h2>
-									      <p>The procedure of gathering data from the web is called web scraping. To put it another way, it's a programme that retrieves information from websites (often HTML pages) and parses it to find particular information.
-									         Web scraping is used to gather data for market research, real estate analysis, corporate intelligence, and other purposes.
-									         The tool learned through this module is called beautifulsoup, is excellent at parsing collected HTML data.
-									       </p>
-									      <h3 style="color: #CFA7F6;">Activity:</h3>
-
-									                 <p>Instructions: Write a web scraping script in Python using the key word 'Data Scientist' and parse this data into either an XML or JSON file. Perform the web scraping with the beautifulsoup4 and Request program modules.</p>
-									                 <p>The provided code demonstrates how to scrape book titles containing the phrase "Data Scientist" from the Goodreads website and save the data into both JSON and XML formats.</p>
-    									                 <p>Code Functionality:</p>
-   									                 <ol>
-    									                     <li>Necessary modules are imported, including requests, json, xml.etree.ElementTree, and beautifulsoup4.</li>
-     									                     <li>The URL for the search page on Goodreads is defined, and parameters for the search query are specified.</li>
-     									                     <li>A GET request is sent to the search page using requests.get(), passing the URL and parameters.</li>
-     									                     <li>The HTML content of the response is parsed using BeautifulSoup's BeautifulSoup class, creating a BeautifulSoup object named soup.</li>
-   									                     <li>The book elements on the page are found using soup.find_all(), specifying the tag and class attributes that match the book elements.</li>
-   									                     <li>An empty list named books_data is initialized to store the extracted book titles.</li>
-    									                     <li>A loop iterates over each book element and extracts the title using find() and text.strip().</li>
-   							        	                     <li>A dictionary is created for each book with the extracted title, and it is appended to the books_data list.</li>
-    									                     <li>The scraped book data is saved into a JSON file using json.dump() and an XML file using ElementTree.</li>
-     									                     <li>A success message is printed to indicate that the data has been successfully scraped and saved.</li>
-									                    </ol>
-									              <p>The codes and results are shown below:</p>
-									              <img src="images/web_scraping1.png" alt="" />
-									              <img src="images/web_scraping2.png" alt="" />
-									              <p>The code allows for the scraping of book titles from the Goodreads search results, store them in JSON and XML files.</p>
-									              <p>Note that it is crucial to check and understand the website's terms of service to ensure compliance with scraping activities. Otherwise , it is recommended to use websites and APIs that provide structured data. </p>
-									
-									       <h3 style="color: #CFA7F6;">Practical Use:</h3>
-									              <p>As a person working in the hospitality industry, a very typical application of web scraping in this sector is to fetch data from portals for booking and rating holiday offers that are normally not accessible via APIs, such as the TripAdvisor portal mentioned above. These typically include product descriptions and pricing data provided by the portal operators as well as user-generated content, such as reviews. As a result, the data can be used to compare and analyse the quality of various vacation packages as well as, of course, track pricing, which, in turn, allow general trends in the industry to be observed and compared across different regions.</p> 
-									              <p>Searching for and extracting the needed text passages using text analysis functions, such as regular expressions, is usually a complex and time-consuming task that is also prone to errors. Therefore, specialized packages including “BeautifulSoup” is a good solution. </p>
-									              Then, the data must undergo several pre-processing steps to be used and analysed by means of a suitable method, for example, regression or classification for predictions.</p>
-									              <p></p>
-									              <p></p>
-
-									  <h2> &#10021; Data cleaning and Transformation </h2>
-									
+								
 									  <h2> &#10021; Data cleaning and automating Data Collection</h2>
+                                                                                 <p>All data analysis and machine learning projects must include the stages of data collection, cleaning, and parsing as they are important steps in the data management process. However, they can be laborious, time-consuming, and prone to errors. Because of this, a lot of data specialists use automation tools or scripts as automating data cleaning and automating data collection can significantly streamline the data management process and improve efficiency and reliability. (Frost & Sullivan, 2018)</p>
 
-									  <h2> &#10021; API Security requirements</h2>
-									
-									            <p>An API, or application programming interface, is a set of defined rules that enable different applications to communicate with each other. It acts as an intermediary layer that processes data transfers between systems, allowing companies to open their application data and functionality to external third-party developers, business partners, and internal departments within their companies.</p>
-    									            <p>A firm can link several apps it uses in its daily operations using an API's definitions and protocols, which saves employee time and eliminates organizational silos that reduce innovation and collaboration. The API documentation simplifies application integration for developers by offering the interface for communication between apps.</p>
-  									            
-									             <h3 style="color: #CFA7F6;">Activity:</h3> 
-									
-									             <p>Instructions: As a team, evaluate the security requirements of an API of your choice and write a brief security requirements specification which mitigates against any risks associated with the API for enabling data sharing, scraping and connectivity between a program code written in Python and any of the following file formats/management systems (XML, JSON and SQL).</p>
-   									             <p>As a person working in the hospitality industry, we have evaluated the security requirements of the ReviewPro API, which has been widely used for years. ReviewPro is a tool used by nearly all hotels in the hotel industry to analyze online guest reviews and other guest feedback to enhance guest satisfaction and online reputation. Their API allows developers to integrate ReviewPro's data and functionality into their own applications.</p>
-  									             <p>According to the online API documentation, the ReviewPro API follows the following security requirements:</p>
-  									             <ul>
-  									                  <li><strong>Authentication:</strong> The ReviewPro API uses API keys for authenticating requests. These keys should be securely stored, never exposed publicly, and rotated periodically to prevent unauthorized access.</li>
-  									                  <li><strong>Data Encryption:</strong> All communication between the client and the API should be encrypted using HTTPS to protect the data during transit and guard against eavesdropping and man-in-the-middle attacks.</li>
-  									              </ul>
- 									               <p>However, to mitigate any risks associated with the API, the following security requirements specification must be implemented:</p>
- 									              <ul>
-  									                  <li><strong>Use a web application firewall:</strong> Implementing a WAF to help detect and block common web-based threats.</li>
-  									                  <li><strong>Rate Limiting:</strong> Implement rate limiting to prevent abuse and potential denial-of-service (DoS) attacks.</li>
- 									                  <li><strong>Input Validation:</strong> Enforce thorough validation of all user inputs and API parameters to prevent injection attacks and other forms of malicious input.</li>
- 									                  <li><strong>Secure Data Handling:</strong> Implement secure practices for data parsing and serialization to prevent data tampering or injection attacks.</li>
-    									                  <li><strong>Logging and Monitoring:</strong> Log and monitor all API requests and responses, and implement an anomaly detection system to identify potential security threats.</li>
-    									                  <li><strong>Access Control:</strong> Implement strong access control measures to ensure authorized data access and modification.</li>
-    									                  <li><strong>Regular Security Audits and Updates:</strong> Conduct regular security audits and promptly patch and update any identified security risks.</li>
-   									             </ul>
-   									             <p>Adherence to these security requirements will help ensure that the ReviewPro API securely handles data sharing, scraping, and connectivity between Python code and various file formats and management systems.</p>
+                                                                                   <p>The automation of data cleaning can be done through scheduled web scraping scripts using BeautifulSoup or Scrapy in Python to automatically extract data from websites and leverage APIs for data retrieval.</p>
 
-									<p></p><a href="digitalportfolioevaluationform.pdf">PDF for test</a><p>
-									<a href="https://github.com/nolaniyi/sample-portfolio"> A GitHub repository/site</a>
+                                                                                   <p>The automation of data cleaning can be done by writing data cleaning scripts using programming languages like Python, R, or SQL. Also, a machine learning (ML) approach can be created in Python to automate the financial dataset cleaning. This includes ingesting data, addressing incomplete data, addressing anomalies, one-hot wrapping, and label encoding, extracting date and time values, and data normalization. (Oladipupo, 2023). Then the data cleaning scripts are scheduled to run on a regular basis. This ensures that new data is cleaned as soon as it is acquired, or that existing datasets are kept up to date.</p>
+
+                                                                                   <p>The article mentioned in this unit was very interesting. Datanami's 2019 article discusses data pipeline automation's significance in DataOps, addressing challenges in managing large volumes of data and enhancing productivity through streamlined workflows.</p>
+
+                                                                                   <h3 style="color: #CFA7F6;">Advantages of Automation:</h3>
+                                                                                   <ul>
+                                                                                     <li>Reduces human error by the rapid detection and correction of inaccuracies through automated data cleansing.</li>
+                                                                                     <li>Consistent cleaning: By using the same cleaning techniques across all data sets, automated data cleaning provides reliable findings.</li>
+                                                                                     <li>Scalability: Automated data cleaning can manage massive volumes of data, making it perfect for processing large data sets.</li>
+                                                                                     <li>Automated data cleaning tools can be tailored to meet certain requirements.</li>
+                                                                                     <li>Through the elimination of repetitious manual activity that might cause human mistake, process automation frees up crucial time.</li>
+                                                                                     <li>Reduces training costs: Automation eliminates the need for extra expert recruits and specialized data scientists.</li>
+                                                                                   </ul>
+
+                                                                                   <h3 style="color: #CFA7F6;">Challenges and Risks of Automation:</h3>
+                                                                                   <ul>
+                                                                                     <li>Data validation is crucial in automating data cleaning and parsing to ensure data meets expected standards and requirements for analysis or model.</li>
+                                                                                     <li>Data integrity ensures the integrity and meaning of data without losing important information or introducing bias.</li>
+                                                                                     <li>Data security involves protecting the security and privacy of data. Compliance with regulations and ethical standards is essential.</li>
+                                                                                     <li>Documenting the data collection steps and cleaning and parsing steps helps avoid confusion or mistrust among stakeholders.</li>
+                                                                                     <li>Data testing is crucial for automating data collection, cleaning, and parsing to ensure accuracy and reliability in output.</li>
+                                                                                     <li>Maintenance is essential for monitoring and troubleshooting issues, such as automatic data updates, to prevent delays, disruptions, or data loss.</li>
+                                                                                   </ul>
+
+                                                                                   <h3 style="color: #CFA7F6;">Reflection:</h3>
+
+                                                                                   <p>These automation skills in data cleaning and data collection empower working with large datasets more efficiently, improve data quality, and derive valuable insights. These skills have broad applications across the hospitality industry, where data is integrated from different sources into a central repository or data warehouse. These automation skills are crucial as they ensure that the data cleaning and collection process ensures that data from various sources is harmonized and consistent.</p>
+
+                                                                                   <h3 style="color: #CFA7F6;">References:</h3>
+                                                                                   <ul>
+                                                                                     <li>Stonebraker, M. and Ilyas, I.F., 2018. Data Integration: The Current Status and the Way Forward. IEEE Data Eng. Bull., 41(2), pp.3-9.</li>
+                                                                                     <li>Why data capture and automation are key to digital transformation - IBM. Available at: <a href="https://www.ibm.com/downloads/cas/QX12A4VA">https://www.ibm.com/downloads/cas/QX12A4VA</a> (Accessed: 19 June 2023).</li>
+                                                                                     <li>Cleaning, D. (no date) What are some of the challenges or risks of automating data cleaning and parsing?, How to Avoid Risks of Automating Data Cleaning. Available at: <a href="https://www.linkedin.com/advice/1/what-some-challenges-risks-automating-data-cleaning">https://www.linkedin.com/advice/1/what-some-challenges-risks-automating-data-cleaning</a> (Accessed: 19 June 2023).</li>
+                                                                                     <li>Oladipupo, M.A. et al. (2023) ‘An automated python script for data cleaning and labeling using machine learning technique’, Informatica, 47(6). doi:10.31449/inf.v47i6.4474.</li>
+                                                                                     <li>Team, D. (2023) How to automate data cleaning: Step-by-step guide, DataHeroes. Available at: <a href="https://dataheroes.ai/blog/how-to-automate-data-cleaning/">https://dataheroes.ai/blog/how-to-automate-data-cleaning/</a> (Accessed: 19 June 2023).</li>
+                                                                                   </ul>
 								</div>
 							</section>
 
