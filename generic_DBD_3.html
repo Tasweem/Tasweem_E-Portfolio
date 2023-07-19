@@ -53,72 +53,39 @@
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
-                                                                 
-							
-									  <h2> &#10021; Web Scraping</h2>
-									      <p>The procedure of gathering data from the web is called web scraping. To put it another way, it's a programme that retrieves information from websites (often HTML pages) and parses it to find particular information.
-									         Web scraping is used to gather data for market research, real estate analysis, corporate intelligence, and other purposes.
-									         The tool learned through this module is called beautifulsoup, is excellent at parsing collected HTML data.
-									       </p>
-									      <h3 style="color: #CFA7F6;">Activity:</h3>
+									  <h2> Data cleaning and Transformation </h2>
+   									   <p>Data cleaning, also called data cleansing or scrubbing, aims at detecting and removing errors and inconsistencies from data to improve the quality of data. <span class="reference">(Rahm et al, 2000)</span>. Data quality issues can occur in a variety of application situations and need to be handled properly to ensure the accuracy of the information. Missing numbers, duplicates, misspelt words, inconsistent data, and incorrect data formats are a few examples of data anomalies. <span class="reference">(Galhardas, 2006)</span>.</p>
 
-									                 <p>Instructions: Write a web scraping script in Python using the key word 'Data Scientist' and parse this data into either an XML or JSON file. Perform the web scraping with the beautifulsoup4 and Request program modules.</p>
-									                 <p>The provided code demonstrates how to scrape book titles containing the phrase "Data Scientist" from the Goodreads website and save the data into both JSON and XML formats.</p>
-    									                 <p>Code Functionality:</p>
-   									                 <ol>
-    									                     <li>Necessary modules are imported, including requests, json, xml.etree.ElementTree, and beautifulsoup4.</li>
-     									                     <li>The URL for the search page on Goodreads is defined, and parameters for the search query are specified.</li>
-     									                     <li>A GET request is sent to the search page using requests.get(), passing the URL and parameters.</li>
-     									                     <li>The HTML content of the response is parsed using BeautifulSoup's BeautifulSoup class, creating a BeautifulSoup object named soup.</li>
-   									                     <li>The book elements on the page are found using soup.find_all(), specifying the tag and class attributes that match the book elements.</li>
-   									                     <li>An empty list named books_data is initialized to store the extracted book titles.</li>
-    									                     <li>A loop iterates over each book element and extracts the title using find() and text.strip().</li>
-   							        	                     <li>A dictionary is created for each book with the extracted title, and it is appended to the books_data list.</li>
-    									                     <li>The scraped book data is saved into a JSON file using json.dump() and an XML file using ElementTree.</li>
-     									                     <li>A success message is printed to indicate that the data has been successfully scraped and saved.</li>
-									                    </ol>
-									              <p>The codes and results are shown below:</p>
-									              <img src="images/web_scraping1.png" alt="" />
-									              <img src="images/web_scraping2.png" alt="" />
-									              <p>The code allows for the scraping of book titles from the Goodreads search results, store them in JSON and XML files.</p>
-									              <p>Note that it is crucial to check and understand the website's terms of service to ensure compliance with scraping activities. Otherwise , it is recommended to use websites and APIs that provide structured data. </p>
-									
-									       <h3 style="color: #CFA7F6;">Practical Use:</h3>
-									              <p>As a person working in the hospitality industry, a very typical application of web scraping in this sector is to fetch data from portals for booking and rating holiday offers that are normally not accessible via APIs, such as the TripAdvisor portal mentioned above. These typically include product descriptions and pricing data provided by the portal operators as well as user-generated content, such as reviews. As a result, the data can be used to compare and analyse the quality of various vacation packages as well as, of course, track pricing, which, in turn, allow general trends in the industry to be observed and compared across different regions.</p> 
-									              <p>Searching for and extracting the needed text passages using text analysis functions, such as regular expressions, is usually a complex and time-consuming task that is also prone to errors. Therefore, specialized packages including “BeautifulSoup” is a good solution. </p>
-									              Then, the data must undergo several pre-processing steps to be used and analysed by means of a suitable method, for example, regression or classification for predictions.</p>
-									              <p></p>
-									              <p></p>
+    									  <h3>&#10021;Examples of causes of errors and inconsistencies:</h3>
+   									   <ul>
+ 									          <li>Data from various sources may have been created at different times, by different people using various conventions to translate real-world entities into data. For instance, the same customer may be addressed by slightly different but accurate names at various tables, such as "Paul Brown," "Brown Paul," or "P. Brown." In the case of a single source, this issue is known as the object or instance identification problem, duplicate elimination, or record linkage problem.</li>
+									          <li>Missing values is also made possible by the fact that amalgamated data is created and utilised by several entities. For example, knowing a client's age is crucial for the marketing department but completely insignificant for the accounting one.</li>
+									          <li>A variety of formats can be used to write data. Data fields may embed data of various types because no standard notation is typically required (these are known as "free-form fields"). An illustration is a street field with the country name and zip code entered wrongly. Additionally, synonyms and abbreviations may be used to refer to an object that is listed under its full name in another record.</li>
+									          <li>Even when the same naming standards are used in several databases, data might still contain errors, mainly because of typos, such as "Pul Brown".</li>
+ 									          <li>There may be discrepancies in data, such as two records for the same person having two different birth dates.</li>
+   									   </ul>
 
-									  <h2> &#10021; Data cleaning and Transformation </h2>
-									
-									  <h2> &#10021; Data cleaning and automating Data Collection</h2>
+    									  <h3>&#10021;Application of Data Cleaning:</h3>
+    									      <ol>
+      									        <li>In the book "Data Wrangling with Python by Kazil, J & Jarmul, K", the authors investigated methods for standardising data formats to address inconsistent formatting. They look at Python packages like pandas, which offer functions for data transformations, formatting, and parsing. Analysts can guarantee consistency and comparability across the dataset by using these strategies.</li>
+       									        <li>Also, the authors discuss on the handling of missing values which is an important component of data cleaning and the strategies for handling missing data in datasets using several techniques like data imputation, dropping missing values, and leveraging libraries like pandas and NumPy to handle missing data effectively.</li>
+            									<li>Data transformation is a specific application of data cleaning. Data transformations are applied across several different jobs and at various ETL life cycle phases. For instance, transformations focus on standardising data formats, imposing standard patterns, or trimming long strings prior to the execution of a data integration project. At the end of the ETL process, transformations are also used, for instance, to combine groups of duplicate records, to identify a singular representation for a group of records (known as the "golden record"), or to get the data ready for consumption by analytics software. <span class="reference">(Chu et al, 2019)</span>.</li>
+        								      </ol>
 
-									  <h2> &#10021; API Security requirements</h2>
+        									<p>By thoroughly addressing data quality issues, analysts can ensure that their datasets are cleaned, validated, and ready for further analysis. This module provided a complete coverage of data cleaning techniques which equips data analysts with the knowledge and skills to handle real-world data challenges effectively.</p>
+
+       									   <h3>References:</h3>
+      									       <ul>
+       									       <li><span class="reference">Rahm E, Do HH (2000) Data cleaning: Problems and current approaches. IEEE Data Engineering Bulletin 23:2000</span></li>
+       									       <li><span class="reference">Galhardas, H. (2006) ‘Data Cleaning and transformation using the ajax framework’, Generative and Transformational Techniques in Software Engineering, pp. 327–343. doi:10.1007/11877028_12.</span></li>
+        								       <li><span class="reference">Kazil, J. and Jarmul, K. (2017) Data wrangling with python. Beijing: O’Reilly.</span></li>
+       									       <li><span class="reference">Liu, H. et al. (2016) ‘Cleaning framework for BigData: An interactive approach for data cleaning’, 2016 IEEE Second International Conference on Big Data Computing Service and Applications (BigDataService) [Preprint]. doi:10.1109/bigdataservice.2016.41.</span></li>
+        								       <li><span class="reference">Ilyas, I.F. and Chu, X. (2019) Data Cleaning [Preprint]. doi:10.1145/3310205.</span></li>
+    									      </ul>
+
+
+
 									
-									            <p>An API, or application programming interface, is a set of defined rules that enable different applications to communicate with each other. It acts as an intermediary layer that processes data transfers between systems, allowing companies to open their application data and functionality to external third-party developers, business partners, and internal departments within their companies.</p>
-    									            <p>A firm can link several apps it uses in its daily operations using an API's definitions and protocols, which saves employee time and eliminates organizational silos that reduce innovation and collaboration. The API documentation simplifies application integration for developers by offering the interface for communication between apps.</p>
-  									            
-									             <h3 style="color: #CFA7F6;">Activity:</h3> 
-									
-									             <p>Instructions: As a team, evaluate the security requirements of an API of your choice and write a brief security requirements specification which mitigates against any risks associated with the API for enabling data sharing, scraping and connectivity between a program code written in Python and any of the following file formats/management systems (XML, JSON and SQL).</p>
-   									             <p>As a person working in the hospitality industry, we have evaluated the security requirements of the ReviewPro API, which has been widely used for years. ReviewPro is a tool used by nearly all hotels in the hotel industry to analyze online guest reviews and other guest feedback to enhance guest satisfaction and online reputation. Their API allows developers to integrate ReviewPro's data and functionality into their own applications.</p>
-  									             <p>According to the online API documentation, the ReviewPro API follows the following security requirements:</p>
-  									             <ul>
-  									                  <li><strong>Authentication:</strong> The ReviewPro API uses API keys for authenticating requests. These keys should be securely stored, never exposed publicly, and rotated periodically to prevent unauthorized access.</li>
-  									                  <li><strong>Data Encryption:</strong> All communication between the client and the API should be encrypted using HTTPS to protect the data during transit and guard against eavesdropping and man-in-the-middle attacks.</li>
-  									              </ul>
- 									               <p>However, to mitigate any risks associated with the API, the following security requirements specification must be implemented:</p>
- 									              <ul>
-  									                  <li><strong>Use a web application firewall:</strong> Implementing a WAF to help detect and block common web-based threats.</li>
-  									                  <li><strong>Rate Limiting:</strong> Implement rate limiting to prevent abuse and potential denial-of-service (DoS) attacks.</li>
- 									                  <li><strong>Input Validation:</strong> Enforce thorough validation of all user inputs and API parameters to prevent injection attacks and other forms of malicious input.</li>
- 									                  <li><strong>Secure Data Handling:</strong> Implement secure practices for data parsing and serialization to prevent data tampering or injection attacks.</li>
-    									                  <li><strong>Logging and Monitoring:</strong> Log and monitor all API requests and responses, and implement an anomaly detection system to identify potential security threats.</li>
-    									                  <li><strong>Access Control:</strong> Implement strong access control measures to ensure authorized data access and modification.</li>
-    									                  <li><strong>Regular Security Audits and Updates:</strong> Conduct regular security audits and promptly patch and update any identified security risks.</li>
-   									             </ul>
-   									             <p>Adherence to these security requirements will help ensure that the ReviewPro API securely handles data sharing, scraping, and connectivity between Python code and various file formats and management systems.</p>
 
 									<p></p><a href="digitalportfolioevaluationform.pdf">PDF for test</a><p>
 									<a href="https://github.com/nolaniyi/sample-portfolio"> A GitHub repository/site</a>
