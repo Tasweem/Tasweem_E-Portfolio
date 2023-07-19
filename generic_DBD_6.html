@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	This is an example of a sub page for each module.  It has to be replicated in each module, containing the requested contents -  artefacts, notes, reflections etc
+	Ensure you give a different title to each replica and link it to the main module page accordingly.
+-->
+<html>
+	<head>
+		<title>Tasweem Beelunkhan</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="css/main.css" />
+		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><span>Tasweem Beelunkhan</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="About.html">About Me</a></li>
+							<li><a href="Launch Module.html">The Data Professional</a></li>
+							<li><a href="Module 2.html">Numerical Analysis</a></li>
+							<li><a href="Module 4.html">Deciphering Big Data</a></li>
+							<li><a href="Module 3.html">Visualising Data</a></li>
+							<li><a href="Module 5.html">Machine Learning PM</a></li>
+							<li><a href="Module 6.html">Research Methods and Professional Practice</a></li>
+							<li><a href="Project.html">Project</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Artefacts</h1>
+										<h3>Outcomes from the Team Exercises and activites</h3>
+									</header>
+
+                                                                 
+							
+									  <h2> &#10021; Web Scraping</h2>
+									      <p>The procedure of gathering data from the web is called web scraping. To put it another way, it's a programme that retrieves information from websites (often HTML pages) and parses it to find particular information.
+									         Web scraping is used to gather data for market research, real estate analysis, corporate intelligence, and other purposes.
+									         The tool learned through this module is called beautifulsoup, is excellent at parsing collected HTML data.
+									       </p>
+									      <h3 style="color: #CFA7F6;">Activity:</h3>
+
+									                 <p>Instructions: Write a web scraping script in Python using the key word 'Data Scientist' and parse this data into either an XML or JSON file. Perform the web scraping with the beautifulsoup4 and Request program modules.</p>
+									                 <p>The provided code demonstrates how to scrape book titles containing the phrase "Data Scientist" from the Goodreads website and save the data into both JSON and XML formats.</p>
+    									                 <p>Code Functionality:</p>
+   									                 <ol>
+    									                     <li>Necessary modules are imported, including requests, json, xml.etree.ElementTree, and beautifulsoup4.</li>
+     									                     <li>The URL for the search page on Goodreads is defined, and parameters for the search query are specified.</li>
+     									                     <li>A GET request is sent to the search page using requests.get(), passing the URL and parameters.</li>
+     									                     <li>The HTML content of the response is parsed using BeautifulSoup's BeautifulSoup class, creating a BeautifulSoup object named soup.</li>
+   									                     <li>The book elements on the page are found using soup.find_all(), specifying the tag and class attributes that match the book elements.</li>
+   									                     <li>An empty list named books_data is initialized to store the extracted book titles.</li>
+    									                     <li>A loop iterates over each book element and extracts the title using find() and text.strip().</li>
+   							        	                     <li>A dictionary is created for each book with the extracted title, and it is appended to the books_data list.</li>
+    									                     <li>The scraped book data is saved into a JSON file using json.dump() and an XML file using ElementTree.</li>
+     									                     <li>A success message is printed to indicate that the data has been successfully scraped and saved.</li>
+									                    </ol>
+									              <p>The codes and results are shown below:</p>
+									              <img src="images/web_scraping1.png" alt="" />
+									              <img src="images/web_scraping2.png" alt="" />
+									              <p>The code allows for the scraping of book titles from the Goodreads search results, store them in JSON and XML files.</p>
+									              <p>Note that it is crucial to check and understand the website's terms of service to ensure compliance with scraping activities. Otherwise , it is recommended to use websites and APIs that provide structured data. </p>
+									
+									       <h3 style="color: #CFA7F6;">Practical Use:</h3>
+									              <p>As a person working in the hospitality industry, a very typical application of web scraping in this sector is to fetch data from portals for booking and rating holiday offers that are normally not accessible via APIs, such as the TripAdvisor portal mentioned above. These typically include product descriptions and pricing data provided by the portal operators as well as user-generated content, such as reviews. As a result, the data can be used to compare and analyse the quality of various vacation packages as well as, of course, track pricing, which, in turn, allow general trends in the industry to be observed and compared across different regions.</p> 
+									              <p>Searching for and extracting the needed text passages using text analysis functions, such as regular expressions, is usually a complex and time-consuming task that is also prone to errors. Therefore, specialized packages including “BeautifulSoup” is a good solution. </p>
+									              Then, the data must undergo several pre-processing steps to be used and analysed by means of a suitable method, for example, regression or classification for predictions.</p>
+									              <p></p>
+									              <p></p>
+
+									  <h2> &#10021; Data cleaning and Transformation </h2>
+									
+									  <h2> &#10021; Data cleaning and automating Data Collection</h2>
+
+									  <h2> &#10021; API Security requirements</h2>
+									
+									            <p>An API, or application programming interface, is a set of defined rules that enable different applications to communicate with each other. It acts as an intermediary layer that processes data transfers between systems, allowing companies to open their application data and functionality to external third-party developers, business partners, and internal departments within their companies.</p>
+    									            <p>A firm can link several apps it uses in its daily operations using an API's definitions and protocols, which saves employee time and eliminates organizational silos that reduce innovation and collaboration. The API documentation simplifies application integration for developers by offering the interface for communication between apps.</p>
+  									            
+									             <h3 style="color: #CFA7F6;">Activity:</h3> 
+									
+									             <p>Instructions: As a team, evaluate the security requirements of an API of your choice and write a brief security requirements specification which mitigates against any risks associated with the API for enabling data sharing, scraping and connectivity between a program code written in Python and any of the following file formats/management systems (XML, JSON and SQL).</p>
+   									             <p>As a person working in the hospitality industry, we have evaluated the security requirements of the ReviewPro API, which has been widely used for years. ReviewPro is a tool used by nearly all hotels in the hotel industry to analyze online guest reviews and other guest feedback to enhance guest satisfaction and online reputation. Their API allows developers to integrate ReviewPro's data and functionality into their own applications.</p>
+  									             <p>According to the online API documentation, the ReviewPro API follows the following security requirements:</p>
+  									             <ul>
+  									                  <li><strong>Authentication:</strong> The ReviewPro API uses API keys for authenticating requests. These keys should be securely stored, never exposed publicly, and rotated periodically to prevent unauthorized access.</li>
+  									                  <li><strong>Data Encryption:</strong> All communication between the client and the API should be encrypted using HTTPS to protect the data during transit and guard against eavesdropping and man-in-the-middle attacks.</li>
+  									              </ul>
+ 									               <p>However, to mitigate any risks associated with the API, the following security requirements specification must be implemented:</p>
+ 									              <ul>
+  									                  <li><strong>Use a web application firewall:</strong> Implementing a WAF to help detect and block common web-based threats.</li>
+  									                  <li><strong>Rate Limiting:</strong> Implement rate limiting to prevent abuse and potential denial-of-service (DoS) attacks.</li>
+ 									                  <li><strong>Input Validation:</strong> Enforce thorough validation of all user inputs and API parameters to prevent injection attacks and other forms of malicious input.</li>
+ 									                  <li><strong>Secure Data Handling:</strong> Implement secure practices for data parsing and serialization to prevent data tampering or injection attacks.</li>
+    									                  <li><strong>Logging and Monitoring:</strong> Log and monitor all API requests and responses, and implement an anomaly detection system to identify potential security threats.</li>
+    									                  <li><strong>Access Control:</strong> Implement strong access control measures to ensure authorized data access and modification.</li>
+    									                  <li><strong>Regular Security Audits and Updates:</strong> Conduct regular security audits and promptly patch and update any identified security risks.</li>
+   									             </ul>
+   									             <p>Adherence to these security requirements will help ensure that the ReviewPro API securely handles data sharing, scraping, and connectivity between Python code and various file formats and management systems.</p>
+
+									<p></p><a href="digitalportfolioevaluationform.pdf">PDF for test</a><p>
+									<a href="https://github.com/nolaniyi/sample-portfolio"> A GitHub repository/site</a>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/jquery.scrollex.min.js"></script>
+			<script src="js/browser.min.js"></script>
+			<script src="js/breakpoints.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
+
+	</body>
+</html>
