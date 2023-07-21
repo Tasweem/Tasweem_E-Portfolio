@@ -73,64 +73,82 @@
 									
 
 									 <h3 style="color: #CFA7F6;">Activity:</h3>
+									
 																	             
-                                                                        <p>Below you will see a table with data in un-normalised form. You should normalise this data to 3rd Normal Form (3NF), showing each step of the process i.e., demonstrating 1NF, 2NF and 3NF. Use the table below</p>
-								 
+                                                                        <p>Below you will see a table with data in un-normalised form. You should normalise this data to 3rd Normal Form (3NF), showing each step of the process i.e., demonstrating 1NF, 2NF and 3NF. Use the table below: </p>
+								        
+									<p></p>
 									        <span class="image">
 							  			
 								                        <img src="images/DBD_Normalisation_T0.png" alt="" />
 							                        </span>
+									 <p></p>
 
-						  			<p> &#10003;First Normal Form (1NF)</p>
+						  			<h3> &#10003;First Normal Form (1NF)</h3>
 									<p>In order to reach the First Normal Form (1NF)
 									     <ol>
 								        	<li>Remove redundant groups from each table.</li>
 								        	<li>For each group of related data, make a distinct table.</li>
 									        <li>Use a primary key to identify each group of related data.</li>
 								    	     <ol> 
-
+									</p>     
 									<p>To achieve this, the NaN values are removed and then associated with  every course to each student using a composite primary key (Student Number and Course Name) as shown below.</p>
-
-								        <p>Each row corresponds to a single record, and there are no recurring groups. 'Student Number' and 'Course Name' make up the primary key. The data are now in First Normal Form (1NF).</p>	
-
-
+										     
 										     
 								                        <img src="images/DBD_Normalisation_p1.png" alt="" />
 							                        </span>
 
-									
+									<p>Each row corresponds to a single record, and there are no recurring groups. 'Student Number' and 'Course Name' make up the primary key. The data are now in First Normal Form (1NF).</p>	
+			                                                <p></p>
+										     
+									<h3> &#10003;Second Normal Form (2NF)</h3>
+
+									<p>To reach the Second Normal Form (2NF)</p>
+
+ 									<ol>
+ 									       <li>Fulfill each First Normal Form criterion.</li>
+  									       <li>Subsets of data that are applicable to multiple rows of a table should be removed and placed in separate tables.</li>
+ 									       <li>Use foreign keys to establish relationships between these new tables and the previous ones.</li>
+  									</ol>
+									<p>According to the above table, "Exam Score," "Exam Boards," and "Teacher Name" are reliant on "Course Name," whereas "Support," "Date of Birth," and "Support" are based on "Student Number." Consequently, we may divide the table into two sections: one for the information on the student and one for the information on the course.</p>
 							  			
 								                        <img src="images/DBD_Normalisation_p2.png" alt="" />
 							                        </span>
-
+									<p>The KeyError appears to have been triggered by trailing white spaces in the column names. The data is then spit after after eliminating these blank areas.</p>
 
 							  			
 								                        <img src="images/DBD_Normalisation_p3.png" alt="" />
 							                        </span>
 
-
+ 									<p>Subsets of data that are applicable to several rows of a table have been removed and put in separate tables. The primary key for the "students" table is "Student Number," whereas the "courses" table contains a composite primary key made up of "Student Number" and "Course Name." The data is now in Second Normal Form (2NF).</p>
 							  			
 								                        <img src="images/DBD_Normalisation_p4.png" alt="" />
 							                        </span>
 
+									<h3> &#10003;Third Normal Form (3NF)</h3>
+
+									<p>The Third Normal Form (3NF) must be attained by:</p>
+
+									    <ol>
+ 									       <li>Satisfying all criteria for the second normal form.</li>
+ 									       <li>Columns that are not dependent on the primary key should be removed.</li>
+									    </ol>
+
+									    <p>"Exam Boards" and "Teacher Name" in our "courses" table depend on "Course Name," but not on "Student Number." As a result, "Exam Boards" and "Teacher Name" can be moved to a different table, where "Course Name" serves as the primary key.</p>
 
 									
 								                        <img src="images/DBD_Normalisation_p5.png" alt="" />
 							                        </span>	
 
-
-							  			
+									    <p>Columns that are not reliant on the primary key have been eliminated. 'Course Name' serves as the primary key in the table 'course_details'. The data is in Third Normal Form (3NF).</p>
+							  		    <p> The final normalized tables in 3NF are shown below:
 								                        <img src="images/DBD_Normalisation_T1.png" alt="" />
 							                        </span>
-
-
-									
+							
 								                        <img src="images/DBD_Normalisation_T2.png" alt="" />
 							                        </span>
-
-
-									
-								                        <img src="images/DBD_Normalisation_T3.png" alt="" />
+					
+								                        <img src="images/DBD_Normalisation_T3.png" alt="" data-position="center center"/>
 							                        </span>
 
 
