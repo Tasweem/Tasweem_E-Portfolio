@@ -52,76 +52,52 @@
 										<h1>Artefacts</h1>
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
+									
+									  <h2> &#10021;> Normalization</h2>
+										  <p>Data analysis is a process that prepares a data model for implementation. The specific technique is called normalization.</p>
 
+										  <p>Normalization is a data analysis technique that organizes data attributes so that they are grouped to form non-redundant, stable, flexible, and adaptive entities. (Li et al, 2009).</p>
+
+										  <p>There are several kinds of normalization, as shown below:</p>
+										  <ul>
+										    <li>1NF (1st Normal Form, eliminate repeating groups): Make a separate table for each set of related attributes, and give each table a primary key.</li>
+										    <li>2NF (2nd Normal Form, eliminate redundant data): If an attribute depends on only part of a multi-valued key, remove it to a separate table.</li>
+										    <li>3NF (3rd Normal Form, eliminate columns not dependent on key): If attributes do not contribute to a description of the key, remove them to a separate table.</li>
+										  </ul>
+
+										  <p>1NF, 2NF, and 3NF are common requirements for data analysis.</p>
+
+										  <h3 style="color: #CFA7F6;">Advantages of Normalisation:</h3>
+										  <ul>
+										    <li>Data redundancy is reduced with the aid of normalization.</li>
+										    <li>Improved database organization overall.</li>
+										    <li>Data consistency within the database.</li>
+										    <li>More adaptable database architecture.</li>
+										    <li>Enforces the concept of relational integrity.</li>
+										  </ul>
+
+										  <h3 style="color: #CFA7F6;">Disadvantages of Normalisation:</h3>
+										  <ul>
+										    <li>Before constructing the database, you must first ascertain the demands of the user.</li>
+										    <li>When the relations are normalized to higher normal forms, such as 4NF and 5NF, the performance suffers.</li>
+										    <li>The process of restoring higher degree relationships to normalcy takes a long time and is challenging.</li>
+										    <li>Careless deconstruction can result in a poor database design, which can cause major issues.</li>
+										  </ul>
+
+										  <h2>References:</h2>
+										  <ul>
+										    <li>DBMS normalization: 1NF, 2NF, 3NF and BCNF with examples - javatpoint (no date) www.javatpoint.com. Available at: <a href="https://www.javatpoint.com/dbms-normalization">https://www.javatpoint.com/dbms-normalization</a> (Accessed: 21 July 2023).</li>
+										    <li>Li, Q. and Chen, Y.-L. (2009) ‘Entity-relationship diagram’, Modeling and Analysis of Enterprise and Information Systems, pp. 125–139. doi:10.1007/978-3-540-89556-5_6.</li>
+										    <li>‘Introducing relational theory’ (no date) Beginning Relational Data Modeling, pp. 27–56. doi:10.1007/978-1-4302-0015-4_2.</li>
+										  </ul>
                                                                  
-							
-									  <h2> &#10021; Web Scraping</h2>
-									      <p>The procedure of gathering data from the web is called web scraping. To put it another way, it's a programme that retrieves information from websites (often HTML pages) and parses it to find particular information.
-									         Web scraping is used to gather data for market research, real estate analysis, corporate intelligence, and other purposes.
-									         The tool learned through this module is called beautifulsoup, is excellent at parsing collected HTML data.
-									       </p>
-									      <h3 style="color: #CFA7F6;">Activity:</h3>
 
-									                 <p>Instructions: Write a web scraping script in Python using the key word 'Data Scientist' and parse this data into either an XML or JSON file. Perform the web scraping with the beautifulsoup4 and Request program modules.</p>
-									                 <p>The provided code demonstrates how to scrape book titles containing the phrase "Data Scientist" from the Goodreads website and save the data into both JSON and XML formats.</p>
-    									                 <p>Code Functionality:</p>
-   									                 <ol>
-    									                     <li>Necessary modules are imported, including requests, json, xml.etree.ElementTree, and beautifulsoup4.</li>
-     									                     <li>The URL for the search page on Goodreads is defined, and parameters for the search query are specified.</li>
-     									                     <li>A GET request is sent to the search page using requests.get(), passing the URL and parameters.</li>
-     									                     <li>The HTML content of the response is parsed using BeautifulSoup's BeautifulSoup class, creating a BeautifulSoup object named soup.</li>
-   									                     <li>The book elements on the page are found using soup.find_all(), specifying the tag and class attributes that match the book elements.</li>
-   									                     <li>An empty list named books_data is initialized to store the extracted book titles.</li>
-    									                     <li>A loop iterates over each book element and extracts the title using find() and text.strip().</li>
-   							        	                     <li>A dictionary is created for each book with the extracted title, and it is appended to the books_data list.</li>
-    									                     <li>The scraped book data is saved into a JSON file using json.dump() and an XML file using ElementTree.</li>
-     									                     <li>A success message is printed to indicate that the data has been successfully scraped and saved.</li>
-									                    </ol>
-									              <p>The codes and results are shown below:</p>
-									              <img src="images/web_scraping1.png" alt="" />
-									              <img src="images/web_scraping2.png" alt="" />
-									              <p>The code allows for the scraping of book titles from the Goodreads search results, store them in JSON and XML files.</p>
-									              <p>Note that it is crucial to check and understand the website's terms of service to ensure compliance with scraping activities. Otherwise , it is recommended to use websites and APIs that provide structured data. </p>
-									
-									       <h3 style="color: #CFA7F6;">Practical Use:</h3>
-									              <p>As a person working in the hospitality industry, a very typical application of web scraping in this sector is to fetch data from portals for booking and rating holiday offers that are normally not accessible via APIs, such as the TripAdvisor portal mentioned above. These typically include product descriptions and pricing data provided by the portal operators as well as user-generated content, such as reviews. As a result, the data can be used to compare and analyse the quality of various vacation packages as well as, of course, track pricing, which, in turn, allow general trends in the industry to be observed and compared across different regions.</p> 
-									              <p>Searching for and extracting the needed text passages using text analysis functions, such as regular expressions, is usually a complex and time-consuming task that is also prone to errors. Therefore, specialized packages including “BeautifulSoup” is a good solution. </p>
-									              Then, the data must undergo several pre-processing steps to be used and analysed by means of a suitable method, for example, regression or classification for predictions.</p>
-									              <p></p>
-									              <p></p>
+								         <h2> &#10021;> Database Build</h2>
 
-									  <h2> &#10021; Data cleaning and Transformation </h2>
-									
-									  <h2> &#10021; Data cleaning and automating Data Collection</h2>
 
-									  <h2> &#10021; API Security requirements</h2>
 									
-									            <p>An API, or application programming interface, is a set of defined rules that enable different applications to communicate with each other. It acts as an intermediary layer that processes data transfers between systems, allowing companies to open their application data and functionality to external third-party developers, business partners, and internal departments within their companies.</p>
-    									            <p>A firm can link several apps it uses in its daily operations using an API's definitions and protocols, which saves employee time and eliminates organizational silos that reduce innovation and collaboration. The API documentation simplifies application integration for developers by offering the interface for communication between apps.</p>
-  									            
-									             <h3 style="color: #CFA7F6;">Activity:</h3> 
 									
-									             <p>Instructions: As a team, evaluate the security requirements of an API of your choice and write a brief security requirements specification which mitigates against any risks associated with the API for enabling data sharing, scraping and connectivity between a program code written in Python and any of the following file formats/management systems (XML, JSON and SQL).</p>
-   									             <p>As a person working in the hospitality industry, we have evaluated the security requirements of the ReviewPro API, which has been widely used for years. ReviewPro is a tool used by nearly all hotels in the hotel industry to analyze online guest reviews and other guest feedback to enhance guest satisfaction and online reputation. Their API allows developers to integrate ReviewPro's data and functionality into their own applications.</p>
-  									             <p>According to the online API documentation, the ReviewPro API follows the following security requirements:</p>
-  									             <ul>
-  									                  <li><strong>Authentication:</strong> The ReviewPro API uses API keys for authenticating requests. These keys should be securely stored, never exposed publicly, and rotated periodically to prevent unauthorized access.</li>
-  									                  <li><strong>Data Encryption:</strong> All communication between the client and the API should be encrypted using HTTPS to protect the data during transit and guard against eavesdropping and man-in-the-middle attacks.</li>
-  									              </ul>
- 									               <p>However, to mitigate any risks associated with the API, the following security requirements specification must be implemented:</p>
- 									              <ul>
-  									                  <li><strong>Use a web application firewall:</strong> Implementing a WAF to help detect and block common web-based threats.</li>
-  									                  <li><strong>Rate Limiting:</strong> Implement rate limiting to prevent abuse and potential denial-of-service (DoS) attacks.</li>
- 									                  <li><strong>Input Validation:</strong> Enforce thorough validation of all user inputs and API parameters to prevent injection attacks and other forms of malicious input.</li>
- 									                  <li><strong>Secure Data Handling:</strong> Implement secure practices for data parsing and serialization to prevent data tampering or injection attacks.</li>
-    									                  <li><strong>Logging and Monitoring:</strong> Log and monitor all API requests and responses, and implement an anomaly detection system to identify potential security threats.</li>
-    									                  <li><strong>Access Control:</strong> Implement strong access control measures to ensure authorized data access and modification.</li>
-    									                  <li><strong>Regular Security Audits and Updates:</strong> Conduct regular security audits and promptly patch and update any identified security risks.</li>
-   									             </ul>
-   									             <p>Adherence to these security requirements will help ensure that the ReviewPro API securely handles data sharing, scraping, and connectivity between Python code and various file formats and management systems.</p>
-
-									<p></p><a href="digitalportfolioevaluationform.pdf">PDF for test</a><p>
-									<a href="https://github.com/nolaniyi/sample-portfolio"> A GitHub repository/site</a>
+									
 								</div>
 							</section>
 
