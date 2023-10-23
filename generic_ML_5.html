@@ -49,35 +49,119 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1> &#10021; Unit 1 - Introduction to Machine Learning (ML) </h1>
+										<h1> &#10021; Unit 5: Clustering </h1>
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
                                                                  						
-										<p>The goal of machine learning, which lies at the nexus of statistics, AI, and computer science, is to derive information from data. It plays a crucial role in a variety of contemporary applications, including internet buying advice and scientific studies like DNA sequence analysis. The decision criteria used in traditional systems were rigid and domain-specific, and they were hard-coded. Machine learning provides flexibility by allowing algorithms to learn from data instead of requiring explicit programming for each circumstance. Machine learning algorithms can be trained to recognise faces in photographs, for instance, while a hard-coded system would be unable to do so.</p>
-										
-										<p>There are two main machine learning techniques:</p>
-										<ol>
-										    <li>Algorithms learn under supervision from input/output pairs that are provided. Examples include recognising scribbled numbers on envelopes, evaluating from medical photographs if tumours are benign, or spotting credit card theft.</li>
-										    <li>Unsupervised learning: No known outcomes are present; only input data is given. It is employed for activities like selecting blog post topics and preference-based client segmentation.</li>
-										</ol>
-										
-										<p>It's imperative to have a thorough understanding of the data and the issue at hand, regardless of the strategy. It's crucial to confirm that the data gathered is pertinent to the issues being addressed and that the machine learning solution is in line with more general goals or corporate objectives.</p>
-										
-										<p>Traditional approaches, with their strict and domain-specific standards, are outclassed by machine learning algorithms' versatility and breadth. Classifiers, as outlined in Miroslav Kubat's book, are the perfect example of this evolution because they convert unprocessed data into useful insights. These classifiers are capable of very accurate predictions thanks to the use of attribute vectors and techniques like iterative specialisation and generalisation.</p>
 
-									        <h3 style="color: #CFA7F6;">Reflection & Practical Use:</h3>
-										<p>The transition from hard-coded systems to machine learning highlights the value of adaptability in the era of big data. The need for systems that can learn, adapt, and forecast becomes more and more important as we produce more data every day. Even though it is a straightforward example, Johnny's pie tastes demonstrate the great power of machine learning to make complex decisions based on a variety of factors. It's exciting to think about how these concepts, when scaled up, may transform companies, and alter how we see complicated occurrences. Kubat's thoughts on classifiers provide us a peek into the complex but incredibly powerful world of machine learning and make us aware of the hidden intricacies that enable our current comforts.</p>
-									        <p></p>
+										    <p>In data analysis and machine learning, clustering—more specifically, K-means clustering—is a well-known technique for organising data points according to their commonalities. The idea of similarity and dissimilarity between data objects is at the heart of clustering, and it is assessed using a variety of metrics, including Jaccard, Manhattan, Cosine, and Euclidean distances (Yan., et al, 2020).</p>
+										    <p>Finding naturally occurring groups in data is the purpose of clustering. For example, in bioinformatics, clustering is used to group genes with similar expression patterns, or in market segmentation, to group clients based on purchase behaviour. By enabling meaningful data segmentation, clustering facilitates meaningful understanding of the data's structure, lowers dimensionality, and enhances decision-making.</p>
+										    <p>As mentioned in the lecture cast, there are several different kinds of clustering algorithms, such as Partitioning (K-means Clustering), Density-based, Grid-based, Distribution-based, and Connectivity-based (e.g., Hierarchical Clustering). Every kind has its own advantages and disadvantages and is appropriate for varying types of information and goals (Wong, 2023).</p>
+										    <p>K-means clustering is a the most popular method due to its simplicity and efficiency. It aims to partition a dataset into a predefined number of clusters while minimizing the variance within clusters and maximizing the variance between clusters (Li., et al, 2021). Although the K-means clustering approach is widely utilised in several data mining domains, its random seed selection might make it susceptible. To lower this risk, an improved K-means clustering technique called k*-means was proposed together with three optimisation principles.</p>
+										    <p>The number of clusters (K) that is selected can have a big impact on how successful K-means clustering is. Plotting the explained variation versus the number of clusters and finding the "elbow" point—where the rate of drop abruptly changes—are techniques like the Elbow Method used to find the ideal K value (Marutho., et al, 2018). Another popular metric for assessing how compact a cluster is the Sum of Squared Error (SSE), which calculates the squared distance between each cluster centroid and each data point.</p>
+										    <p>Furthermore, several optimisation strategies and assessment criteria have been put forth to improve K-means' performance and offer a more perceptive assessment of the clusters that are produced. These include using global optimisation methods, optimising the initialization of cluster centroids, and using metrics like separation, cohesion, and the silhouette approach for a more thorough assessment of the clustering outcomes.</p>
+
+
+								    <h3 style="color: #CFA7F6;">ACTIVITY:</h3>
+										<p>The table shows the pathological test results for three individuals:</p>
+										
+										<table>
+										    <tr>
+										        <th>Name</th>
+										        <th>Gender</th>
+										        <th>Fever</th>
+										        <th>Cough</th>
+										        <th>Test-1</th>
+										        <th>Test-2</th>
+										        <th>Test-3</th>
+										        <th>Test-4</th>
+										    </tr>
+										    <tr>
+										        <td>Jack</td>
+										        <td>M</td>
+										        <td>Y</td>
+										        <td>N</td>
+										        <td>P</td>
+										        <td>N</td>
+										        <td>N</td>
+										        <td>A</td>
+										    </tr>
+										    <tr>
+										        <td>Mary</td>
+										        <td>F</td>
+										        <td>Y</td>
+										        <td>N</td>
+										        <td>P</td>
+										        <td>A</td>
+										        <td>P</td>
+										        <td>N</td>
+										    </tr>
+										    <tr>
+										        <td>Jim</td>
+										        <td>M</td>
+										        <td>Y</td>
+										        <td>P</td>
+										        <td>N</td>
+										        <td>N</td>
+										        <td>N</td>
+										        <td>A</td>
+										    </tr>
+										</table>
+										
+										<p>Calculate Jaccard coefficient for the following pairs:</p>
+										<ul>
+										    <li>(Jack, Mary)</li>
+										    <li>(Jack, Jim)</li>
+										    <li>(Jim, Mary)</li>
+										</ul>
+										
+										<p>The Jaccard coefficient, also known as the Jaccard similarity index, is defined as:</p>
+										<p>J(A,B) = (|A∩B|) / (|A∪B|)</p>
+										
+										<p>Where:</p>
+										<ul>
+										    <li>A and B are two sets.</li>
+										    <li>|A∩B| is the size of the intersection of the two sets.</li>
+										    <li>|A∪B| is the size of the union of the two sets.</li>
+										</ul>
+										
+										<p>To calculate the Jaccard coefficient, treat each individual's attributes as a set, with similar attributes in the intersection set and all attributes in the union set. Handle 'A' as distinct, as it can affect the similarity score. If ignored, only non-'A' attributes are considered. For this calculation, 'A' is treated as a distinct value.</p>
+										
+										<p><img src="images/ML_Unit5_P1.png" alt="Visual representation of Jaccard Coefficient"></p>
+										
+										<p>The Jaccard coefficient of 1.0 indicates that Jack and Jim have the same traits, but the attributes of Jim and Mary and Jack and Mary are comparable by about 66.67%.</p>
+
+
+
 									
-									       <h3 style="color: #CFA7F6;">References:</h3>
-									 <ol>
-									    <li>Badillo, S. et al. (2020) ‘An introduction to machine learning’, <i>Clinical Pharmacology & Therapeutics</i>, 107(4), pp. 871–885. <a href="https://doi.org/10.1002/cpt.1796">doi:10.1002/cpt.1796</a>.</li>
-									    <li>Fielding, A.H. (1999) ‘An introduction to machine learning methods’, <i>Machine Learning Methods for Ecological Applications</i>, pp. 1–35. <a href="https://doi.org/10.1007/978-1-4615-5289-5_1">doi:10.1007/978-1-4615-5289-5_1</a>.</li>
-									    <li>Müller, A.C. and Guido, S. (2018) ‘Chapter 1’, in <i>Introduction to machine learning with python: A guide for data scientists</i>. Sebastopol, CA: O’Reilly Media, Inc., pp. 1–23.</li>
-									    <li>Kubat, M. (2021) ‘Chapter 1.1’, in <i>An introduction to machine learning</i>. 2nd edn. Springer International Publishing AG, pp. 1–4.</li>
-									</ol>
+									 <h3 style="color: #CFA7F6;">Reflection:</h3>
+										<p>Clustering is a technique with numerous applications in various fields, including market segmentation and bioinformatics. Its nuances have led to an appreciation of its potential and the myriad of applications it holds. The exploration of different metrics and methods has revealed the importance of making informed choices in clustering analysis.</p>
+										
+										<p>K-means clustering is an attractive choice due to its simplicity and efficiency, but the optimization of the number of clusters and sensitivity to initialization are challenges. The continuous exploration and optimization efforts in clustering algorithms reflect the community's endeavour to refine these methods for better accuracy and insights.</p>
+										
+										<p>This iterative process of learning, adapting, and optimizing makes the field of clustering a continually evolving landscape.</p>
 
+									
+								         <h3 style="color: #CFA7F6;">References:</h3>
+
+
+									<ol>
+									    <li>Yan, X. and Lyu, D. (2020) ‘Comparing dissimilarity metrics for clustering gene into functional modules using machine learning’, <i>Proceedings of the 2020 10th International Conference on Bioscience, Biochemistry and Bioinformatics</i> [Preprint]. doi:10.1145/3386052.3386067.</li>
+									    
+									    <li>Wong, K.J. (2023) <a href="https://towardsdatascience.com/6-types-of-clustering-methods-an-overview-7522dba026ca">6 types of clustering methods - an overview</a>, Medium.</li>
+									    
+									    <li>Li, Y. et al. (2021) ‘Customer segmentation using K-means clustering and the adaptive particle swarm optimization algorithm’, <i>Applied Soft Computing</i>, 113, p. 107924. doi:10.1016/j.asoc.2021.107924.</li>
+									    
+									    <li>Monsalves, B. and Damjan (2022) <a href="https://www.analytixlabs.co.in/blog/types-of-clustering-algorithms/#:~:text=The%20various%20types%20of%20clustering,based%20%28Supervised%20Clustering">Types of clustering algorithms in machine learning with examples</a>, Blogs &amp; Updates on Data Science, Business Analytics, AI Machine Learning.</li>
+									    
+									    <li>Marutho, D. et al. (2018) ‘The determination of cluster number at K-mean using elbow method and purity evaluation on Headline news’, <i>2018 International Seminar on Application for Technology of Information and Communication</i> [Preprint]. doi:10.1109/isemantic.2018.8549751.</li>
+									    
+									    <li><a href="https://www.geeksforgeeks.org/clustering-in-data-mining/">Clustering in data mining</a> (2022) GeeksforGeeks.</li>
+									    
+									    <li>Kumari, R. et al. (2016) ‘Anomaly detection in network traffic using K-mean clustering’, <i>2016 3rd International Conference on Recent Advances in Information Technology (RAIT)</i> [Preprint]. doi:10.1109/rait.2016.7507933.</li>
+									</ol>
+	
 									
 								</div>
 							</section>
