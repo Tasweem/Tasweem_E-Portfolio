@@ -49,34 +49,117 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1> &#10021; Unit 1 - Introduction to Machine Learning (ML) </h1>
+										<h1> &#10021; Unit 4 - Linear Regression with Scikit-Learn </h1>
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
-                                                                 						
-										<p>The goal of machine learning, which lies at the nexus of statistics, AI, and computer science, is to derive information from data. It plays a crucial role in a variety of contemporary applications, including internet buying advice and scientific studies like DNA sequence analysis. The decision criteria used in traditional systems were rigid and domain-specific, and they were hard-coded. Machine learning provides flexibility by allowing algorithms to learn from data instead of requiring explicit programming for each circumstance. Machine learning algorithms can be trained to recognise faces in photographs, for instance, while a hard-coded system would be unable to do so.</p>
-										
-										<p>There are two main machine learning techniques:</p>
-										<ol>
-										    <li>Algorithms learn under supervision from input/output pairs that are provided. Examples include recognising scribbled numbers on envelopes, evaluating from medical photographs if tumours are benign, or spotting credit card theft.</li>
-										    <li>Unsupervised learning: No known outcomes are present; only input data is given. It is employed for activities like selecting blog post topics and preference-based client segmentation.</li>
-										</ol>
-										
-										<p>It's imperative to have a thorough understanding of the data and the issue at hand, regardless of the strategy. It's crucial to confirm that the data gathered is pertinent to the issues being addressed and that the machine learning solution is in line with more general goals or corporate objectives.</p>
-										
-										<p>Traditional approaches, with their strict and domain-specific standards, are outclassed by machine learning algorithms' versatility and breadth. Classifiers, as outlined in Miroslav Kubat's book, are the perfect example of this evolution because they convert unprocessed data into useful insights. These classifiers are capable of very accurate predictions thanks to the use of attribute vectors and techniques like iterative specialisation and generalisation.</p>
+												 <p>This unit focussed on linear regression demonstrating its practical implementation using Python and the machine learning framework scikit-learn.</p>
+												
+												<p>Scikit-learn (Pedregosa et al., 2011) is a general-purpose machine learning library written in Python.
+												The steps to perform linear regression can be straightforward, especially when utilizing the Scikit-Learn library in Python, a robust tool for machine learning that offers simple and efficient solutions for data mining and analysis.</p>
+												
+												<blockquote>
+												    Pedregosa, F., et al. (2011) states that linear Regression with Scikit-Learn has the following advantages:
+												    <ul>
+												        <li>Simplicity: Linear regression is a straightforward approach that is simple to grasp and interpret. As a result, it is a good starting place for those new to data science and machine learning.</li>
+												        <li>Efficiency: Scikit-learn's performance has been optimised. Using this module to implement linear regression is computationally efficient.</li>
+												        <li>Interpretability: In linear regression, the coefficients directly represent the change in the dependent variable for a one-unit change in an independent variable, assuming all other variables remain constant.</li>
+												        <li>Pandas integration: Scikit-Learn interacts seamlessly with Pandas, a popular Python data processing library. This simplifies the preprocessing and handling of data.</li>
+												    </ul>
+												</blockquote>
+												
+												<h3>Limitations:</h3>
+												<ul>
+												    <li>Linearity Assumption: The intrinsic assumption of linearity is a fundamental constraint. Because real-world data is frequently non-linear, the model may fail to reflect complicated relationships (James, et al, 2013).</li>
+												    <li>Outlier Sensitive: Linear regression is susceptible to outliers, which can drastically alter the model's coefficients.</li>
+												    <li>Multicollinearity: In the presence of correlated independent variables, coefficient estimations might be unstable. It is critical to ensure that the independent variables are not overly connected.</li>
+												    <li>Overfitting: Linear regression, like many machine learning models, can suffer from overfitting, especially when employing many features. Regularisation techniques such as Ridge and Lasso regression can help to alleviate this (Rosa, 2010).</li>
+												</ul>
+												
+												<p>While linear regression is a fundamental approach, it is critical to understand its strengths and shortcomings. Scikit-Learn makes this easier by offering tools for not only implementing linear regression but also evaluating its performance and diagnosing potential problems.</p>
+												
+									
+									
+									                        <h3 style="color: #CFA7F6;">Task A: Correlation</h3>
+												<p>Pre-process the data – mean population of each country and mean per capita GDP (from 2001 to 2021) by making some arrangements for the missing values. Investigate any correlation between the mean population of each country and the mean per capita GDP (from 2001 to 2021). Very briefly, interpret the generated plot. Evaluate the Pearson Correlation Coefficient.</p>
+												
+												<h2>Data loading and exploration</h2>
+												
+												<ol>
+												    <li>Firstly, the necessary libraries are imported and the Global_GDP and Global_population are loaded.</li>
+												    <li>The first five rows of the data are viewed using the ‘head ()’ syntax.</li>
+												</ol>
+												
+												<p>From the results, it can be seen that:</p>
+												<ul>
+												    <li>GDP Data:
+												        <ul>
+												            <li>Columns for Country Name, Country Code, Indicator Name, and Indicator Code.</li>
+												            <li>GDP values for each year from 1960 to 2020.</li>
+												        </ul>
+												    </li>
+												    <li>Population Data:
+												        <ul>
+												            <li>Columns for Country Name, Country Code, Series Name, and Series Code.</li>
+												            <li>Population values for each year from 1960 to 2021.</li>
+												        </ul>
+												    </li>
+												</ul>
+												
+												<h2>Data pre-processing</h2>
+												
+												<ol start="3">
+												    <li>Now, since we want to investigate any correlation between the mean population of each country and the mean per capita GDP from 2001 to 2021 and the GDP dataset does not have data for the year 2021. We will filter the data to include only the years from 2001 to 2020.</li>
+												    <li>As seen in the data, there are missing values in the GDP data and the population data. Thus, to handle the missing values, Linear Interpolation is used.</li>
+												    <li>The mean GDP and mean population for each country from 2001 to 2021 is calculated.</li>
+												    <img src="images/ML_Unit4_P1.png" alt="Dataset after preprocessing">
+												</ol>
+												
+												<h2>Correlation Analysis</h2>
+												
+												<ol start="6">
+												    <li>Both mean GDP and mean population are combined into one Dataframe. Then, mean per capita GDP for each country is calculated.</li>
+												    <img src="images/ML_Unit4_P2.png" alt="Correlation Analysis Data">
+												    <li>However, Aruba appears twice in the results. This requires further inspection.</li>
+												    <img src="images/ML_Unit4_P3.png" alt="Duplicate Check">
+												    <li>A scatterplot is used to visualize the relationship.</li>
+												    <img src="images/ML_Unit4_P4.png" alt="Scatterplot of Population vs GDP">
+												</ol>
+												
+												<p>From the plot:</p>
+												<ul>
+												    <li>There is a cluster of countries with lower average populations and varied per capita GDPs.</li>
+												    <li>A few larger countries with larger populations have lower per capita GDPs.</li>
+												    <li>There does not appear to be a strong linear relationship.</li>
+												</ul>
+												
+												<p>The Pearson Correlation Coefficient suggests a very weak negative linear association.</p>
+												
+												<h3 style="color: #CFA7F6;">Task B: Regression</h3>
+												<p>Perform linear regression, where the independent variable is the mean population of each country (from 2001 to 2021) and dependent variable is mean per capita GDP (from 2001 to 2021).</p>
+												
+												<figure>
+												    <img src="images/ML_Unit4_P5.png" alt="Linear Regression Analysis">
+												    <figcaption>The linear regression analysis reveals a significant correlation.</figcaption>
+												</figure>
+												
+												<p>The model explains approximately 52.02% of the variance in the mean GDP, indicating that population size is a significant predictor of a country's GDP.</p>
 
+									
 									        <h3 style="color: #CFA7F6;">Reflection & Practical Use:</h3>
-										<p>The transition from hard-coded systems to machine learning highlights the value of adaptability in the era of big data. The need for systems that can learn, adapt, and forecast becomes more and more important as we produce more data every day. Even though it is a straightforward example, Johnny's pie tastes demonstrate the great power of machine learning to make complex decisions based on a variety of factors. It's exciting to think about how these concepts, when scaled up, may transform companies, and alter how we see complicated occurrences. Kubat's thoughts on classifiers provide us a peek into the complex but incredibly powerful world of machine learning and make us aware of the hidden intricacies that enable our current comforts.</p>
-									        <p></p>
+										    <p>Because of its simplicity and interpretability, linear regression remains a cornerstone in the field of machine learning. With its user-friendly interface, Scikit-Learn simplifies the development of linear regression and many other algorithms, allowing for quick experimentation and application. This simplifies the process, enabling rapid prototyping and bridging the gap between complex theories and practical applications.</p>
+   										    <p>However, this simplification can sometimes obscure the underlying assumptions, such as linearity, independence, homoscedasticity, and normality. As practitioners, we must strike a balance between harnessing the efficiency of tools like Scikit-Learn while never losing sight of the fundamental principles that anchor our models. This reflective journey from abstraction to understanding is the essence of responsible and impactful data science.</p>
+
 									
 									       <h3 style="color: #CFA7F6;">References:</h3>
-									 <ol>
-									    <li>Badillo, S. et al. (2020) ‘An introduction to machine learning’, <i>Clinical Pharmacology & Therapeutics</i>, 107(4), pp. 871–885. <a href="https://doi.org/10.1002/cpt.1796">doi:10.1002/cpt.1796</a>.</li>
-									    <li>Fielding, A.H. (1999) ‘An introduction to machine learning methods’, <i>Machine Learning Methods for Ecological Applications</i>, pp. 1–35. <a href="https://doi.org/10.1007/978-1-4615-5289-5_1">doi:10.1007/978-1-4615-5289-5_1</a>.</li>
-									    <li>Müller, A.C. and Guido, S. (2018) ‘Chapter 1’, in <i>Introduction to machine learning with python: A guide for data scientists</i>. Sebastopol, CA: O’Reilly Media, Inc., pp. 1–23.</li>
-									    <li>Kubat, M. (2021) ‘Chapter 1.1’, in <i>An introduction to machine learning</i>. 2nd edn. Springer International Publishing AG, pp. 1–4.</li>
-									</ol>
+										    <ul>
+										        <li>James, G. et al. (2013) ‘Statistical learning’, <i>Springer Texts in Statistics</i>, pp. 15–57. <a href="https://doi.org/10.1007/978-1-4614-7138-7_2">doi:10.1007/978-1-4614-7138-7_2</a>.</li>
+										        <li>Pedregosa, F. et al. (2011) Scikit-Learn: Machine learning in Python, <i>The Journal of Machine Learning Research</i>. Available at: <a href="https://dl.acm.org/doi/10.5555/1953048.2078195">https://dl.acm.org/doi/10.5555/1953048.2078195</a> (Accessed: 19 October 2023).</li>
+										        <li>Rosa, G.J. (2010) ‘The elements of Statistical Learning: Data Mining, Inference, and prediction by Hastie, T., Tibshirani, R., and Friedman, J.’, <i>Biometrics</i>, 66(4), pp. 1315–1315. <a href="https://doi.org/10.1111/j.1541-0420.2010.01516.x">doi:10.1111/j.1541-0420.2010.01516.x</a>.</li>
+										        <li>Stöckl, A. and Bodenhofer, U. (2022) ‘Regression’, <i>Applied Data Science in Tourism</i>, pp. 209–229. <a href="https://doi.org/10.1007/978-3-030-88389-8_11">doi:10.1007/978-3-030-88389-8_11</a>.</li>
+										        <li>Tibshirani, R. (1996) ‘Regression shrinkage and selection via the lasso’, <i>Journal of the Royal Statistical Society: Series B (Methodological)</i>, 58(1), pp. 267–288. <a href="https://doi.org/10.1111/j.2517-6161.1996.tb02080.x">doi:10.1111/j.2517-6161.1996.tb02080.x</a>.</li>
+										        <li>Weisberg, S. (2014) <i>Applied linear regression</i>. Wiley.</li>
+										    </ul>
 
 									
 								</div>
