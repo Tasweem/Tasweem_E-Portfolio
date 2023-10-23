@@ -53,32 +53,91 @@
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
-                                                                 						
-										<p>The goal of machine learning, which lies at the nexus of statistics, AI, and computer science, is to derive information from data. It plays a crucial role in a variety of contemporary applications, including internet buying advice and scientific studies like DNA sequence analysis. The decision criteria used in traditional systems were rigid and domain-specific, and they were hard-coded. Machine learning provides flexibility by allowing algorithms to learn from data instead of requiring explicit programming for each circumstance. Machine learning algorithms can be trained to recognise faces in photographs, for instance, while a hard-coded system would be unable to do so.</p>
-										
-										<p>There are two main machine learning techniques:</p>
-										<ol>
-										    <li>Algorithms learn under supervision from input/output pairs that are provided. Examples include recognising scribbled numbers on envelopes, evaluating from medical photographs if tumours are benign, or spotting credit card theft.</li>
-										    <li>Unsupervised learning: No known outcomes are present; only input data is given. It is employed for activities like selecting blog post topics and preference-based client segmentation.</li>
-										</ol>
-										
-										<p>It's imperative to have a thorough understanding of the data and the issue at hand, regardless of the strategy. It's crucial to confirm that the data gathered is pertinent to the issues being addressed and that the machine learning solution is in line with more general goals or corporate objectives.</p>
-										
-										<p>Traditional approaches, with their strict and domain-specific standards, are outclassed by machine learning algorithms' versatility and breadth. Classifiers, as outlined in Miroslav Kubat's book, are the perfect example of this evolution because they convert unprocessed data into useful insights. These classifiers are capable of very accurate predictions thanks to the use of attribute vectors and techniques like iterative specialisation and generalisation.</p>
+												<p>Correlation signifies the strength and direction of a linear relationship between two variables, offering insights into feature interdependencies, a pivotal aspect in feature engineering and selection. On the other hand, regression provides a framework to predict the output of a variable based on one or more inputs, making it central to predictive modelling in machine learning (Rizwan, 2020).</p>
+												
+												<p>A way to assess the direction and strength of a linear relationship between two quantitative variables is through correlation. The range of the value is from -1 to 1. A score around 1 denotes a significant positive correlation, meaning that as one variable rises, so does the likelihood that the other will as well. As one variable increases, the other tends to decrease, therefore a number close to -1 denotes a high negative connection (Nair et al, 2023).</p>
+												
+												<p>It is used in machine learning for:</p>
+												<ul>
+												    <li><b>Feature Selection:</b> Correlation matrices are often used to select relevant features. If two features are highly correlated, they carry redundant information. One of them can be dropped to reduce dimensionality.</li>
+												    <li><b>Detecting Multicollinearity:</b> In linear regression models, multicollinearity can distort the prediction. Correlation analysis helps in detecting such scenarios.</li>
+												    <li><b>Understanding Relationships:</b> Before building complex models, correlation analysis gives a quick overview of relationships between variables.</li>
+												</ul>
+												
+
+												<p>Regression is used to model and analyse relationships between variables. It offers a framework for forecasting output based on one or more inputs. It is extensively used for prediction and prognostication, and its use has substantial overlap with the domain of machine learning (Bansal et al 2021).</p>
+												
+												<p>Types:</p>
+												<ul>
+												    <li><b>Linear Regression:</b> Assumes that the dependent and independent variables have a linear relationship.</li>
+												    <li><b>Logistic Regression:</b> This method is used to solve binary classification problems.</li>
+												    <li><b>Polynomial Regression:</b> This method captures non-linear correlations by using polynomial characteristics.</li>
+												</ul>
+												
+												<p>It is used in machine learning for:</p>
+												<ul>
+												    <li><b>Predictive Modelling:</b> The primary application is forecasting where future values are predicted based on historical data.</li>
+												    <li><b>Understanding Feature Importance:</b> The significance of features in formulating predictions can be revealed by regression coefficients.</li>
+												    <li><b>Evaluating Trends:</b> Regression models can detect and highlight underlying trends in data.</li>
+												</ul>
+									
+									 <h3>ACTIVITY</h3>
+												
+												<p><b>Example 1:</b></p>
+												<p>The Covariance measures the directional relationship between the two variable's deviations from their mean and the Pearson's correlation coefficient measures the linear relationship between two datasets.</p>
+												<p><img src="images/ML_Unit3_P1.png" alt="Covariance Visualization"> <images/ML_Unit3_P2.png" alt="Pearson's Correlation Visualization"></p>
+												<p>In this case, a coefficient of -0.832 suggests a strong negative linear relationship between car weight and mpg. As the weight of a car increases, its fuel efficiency (mpg) tends to decrease.</p>
+												<h4>Interpretation:</h4>
+												<p>The results indicate that there's a strong inverse relationship between the weight of a car and its fuel efficiency (mpg). Heavier cars in the dataset generally have lower mpg, which implies that they are less fuel-efficient. This relationship is both visually evident (from the scatter plot) and statistically significant (from the Pearson's correlation coefficient). The negative covariance further supports this inverse relationship.</p>
+												
+												<p><b>Example 2:</b></p>
+												<p>The linregress function from scipy.stats is used to perform linear regression on the x (weight) and y (mpg) datasets as shown below:</p>
+												<p><img src="images/ML_Unit3_P3.png" alt="Linear Regression 1"> <images/ML_Unit3_P4.png" alt="Linear Regression 2"></p>
+												<p>The code predicts the miles per gallon (mpg) of a car given that its weight is 1000 pounds, based on the linear relationship between mpg and weight. As shown above, the mpg is 38.6.</p>
+												
+												<p><b>Example 3:</b></p>
+												<p>Now A new linear regression model, regr, is created using linear_model.LinearRegression(). The fit method of the regr model is then called, with X and y as arguments, to train the model on the dataset. The values of the columns weight and displacement from the DataFrame are set as predictor variables and stored in x and the mpg column from the DataFrame is set as the target variable and stored in y.</p>
+												<p>The trained model is used to predict the mpg for a car with a weight of 3000 pounds and a displacement of 250 cubic inches. The results show that for a car with a displacement of 250.0 cubic inches and a weight of 3000 pounds, the predicted miles per gallon (mpg) is approximately 22.4 mpg.</p>
+												<p>Now we used the regr.coef_ to output the predictor variables' coefficients. It represents the change in the dependent variable (mpg) for a one-unit change in the predictor (mpg), while keeping all other predictors constant.</p>
+												<p><img src="images/ML_Unit3_P5.png" alt="Predictor Variables' Coefficients"></p>
+												<p>The coefficients for weight and displacement indicate that as a car's weight increases, its fuel efficiency decreases by approximately 0.0058 units, assuming the engine displacement remains unchanged. Conversely, as the car's displacement increases by 1 cubic inch, its fuel efficiency decreases by about 0.0164 units, assuming the weight remains constant. These negative values reinforce the inverse relationships between these predictors and the target variable (mpg).</p>
+												<p>Then, we changed the weight to 3500 pounds and displacement of 300 cubic inches to predict the mpg (miles per gallon) for a car using the trained linear regression model regr.</p>
+												<p><img src="images/ML_Unit3_P6.png" alt="Linear Regression Model Result 3"></p>
+												<p>The results showed that the predicted miles per gallon (mpg) is approximately 18.70 mpg.</p>
+												
+												<p><b>Example 4:</b></p>
+												<p>A polynomial regression is performed on the mpg and weight columns of the auto-mpg.csv dataset and then a scatter plot with the polynomial regression curve is used to visualize the results.</p>
+												<p>Here's the plot showing the relationship between weight and mpg with a third-degree polynomial regression fit.</p>
+												<p><img src="images/ML_Unit3_P7.png" alt="Polynomial Regression Visualization 1"> <img src="images/ML_Unit3_P8.png" alt="Polynomial Regression Visualization 2"></p>
+												<p>The blue dots represent the actual data points from the auto-mpg.csv dataset, while the red curve is the polynomial fit. As the weight of the car increases, the miles per gallon (mpg) tends to decrease, which is consistent with our expectations. The polynomial fit captures this trend and provides a more flexible representation compared to a straight-line fit.</p>
+												<p>The code calculates the R2 score, indicating the proportion of the dependent variable's variance predictable from the independent variable, assessing the model's ability to replicate observed outcomes.</p>
+												<p><img src="images/ML_Unit3_P9.png" alt="R2 Score"></p>
+												<p>The R 2 score for this third-degree polynomial regression model is approximately 0.7148. This means that the model explains about 71.48% of the variance in the mpg values.</p>
+												<p>The code below will predict the mpg (miles per gallon) for a car with a weight of 1700 based on the polynomial regression model ‘mymodel’.</p>
+												<p><img src="images/ML_Unit3_P10.png" alt="Polynomial Regression Prediction"></p>
+												<p>For a car weight of 1700 pounds, the predicted miles per gallon (mpg) using our polynomial regression model is approximately 35.79 mpg.</p>
 
 									        <h3 style="color: #CFA7F6;">Reflection & Practical Use:</h3>
-										<p>The transition from hard-coded systems to machine learning highlights the value of adaptability in the era of big data. The need for systems that can learn, adapt, and forecast becomes more and more important as we produce more data every day. Even though it is a straightforward example, Johnny's pie tastes demonstrate the great power of machine learning to make complex decisions based on a variety of factors. It's exciting to think about how these concepts, when scaled up, may transform companies, and alter how we see complicated occurrences. Kubat's thoughts on classifiers provide us a peek into the complex but incredibly powerful world of machine learning and make us aware of the hidden intricacies that enable our current comforts.</p>
-									        <p></p>
+										<p>Machine learning involves understanding data and statistics, loading data, exploring its characteristics, choosing a model, training the model, and evaluating its performance. The choice of model depends on the data's nature and variable relationships. Striking a balance is crucial, as polynomial regression can fit non-linear data better but can overfit if too high. Regularly evaluating model performance and understanding metrics like R<sup>2</sup> score is essential. In the context of this unit, we traversed various aspects of machine learning, from data handling to model selection, fitting, and evaluation. The tools and methodologies used here are foundational to many machine learning tasks.</p>
 									
 									       <h3 style="color: #CFA7F6;">References:</h3>
-									 <ol>
-									    <li>Badillo, S. et al. (2020) ‘An introduction to machine learning’, <i>Clinical Pharmacology & Therapeutics</i>, 107(4), pp. 871–885. <a href="https://doi.org/10.1002/cpt.1796">doi:10.1002/cpt.1796</a>.</li>
-									    <li>Fielding, A.H. (1999) ‘An introduction to machine learning methods’, <i>Machine Learning Methods for Ecological Applications</i>, pp. 1–35. <a href="https://doi.org/10.1007/978-1-4615-5289-5_1">doi:10.1007/978-1-4615-5289-5_1</a>.</li>
-									    <li>Müller, A.C. and Guido, S. (2018) ‘Chapter 1’, in <i>Introduction to machine learning with python: A guide for data scientists</i>. Sebastopol, CA: O’Reilly Media, Inc., pp. 1–23.</li>
-									    <li>Kubat, M. (2021) ‘Chapter 1.1’, in <i>An introduction to machine learning</i>. 2nd edn. Springer International Publishing AG, pp. 1–4.</li>
-									</ol>
+												<ol>
+												    <li>Rizwan, Mohd.A. (2020) ‘Correlation and regression’, <i>Machine Learning and Big Data</i>, pp. 53–69. <a href="https://doi.org/10.1002/9781119654834.ch3" target="_blank">doi:10.1002/9781119654834.ch3</a>.</li>
+												    <li>Ali, P. and Younas, A. (2021) ‘Understanding and interpreting regression analysis’, <i>Evidence Based Nursing</i>, 24(4), pp. 116–118. <a href="https://doi.org/10.1136/ebnurs-2021-103425" target="_blank">doi:10.1136/ebnurs-2021-103425</a>.</li>
+												    <li>Bansal, U. et al. (2021) ‘Empirical analysis of regression techniques by house price and salary prediction’, <i>IOP Conference Series: Materials Science and Engineering</i>, 1022(1), p. 012110. <a href="https://doi.org/10.1088/1757-899x/1022/1/012110" target="_blank">doi:10.1088/1757-899x/1022/1/012110</a>.</li>
+												    <li>Maulud, D. and Abdulazeez, A.M. (2020) ‘A review on linear regression comprehensive in machine learning’, <i>Journal of Applied Science and Technology Trends</i>, 1(4), pp. 140–147. <a href="https://doi.org/10.38094/jastt1457" target="_blank">doi:10.38094/jastt1457</a>.</li>
+												    <li>Nair, N.S. and Ganapathy, S. (2023) ‘An overview of correlation and regression methods in medical research – an ophthalmologic perspective’, <i>Kerala Journal of Ophthalmology</i>, 35(1), pp. 103–108. <a href="https://doi.org/10.4103/kjo.kjo_32_23" target="_blank">doi:10.4103/kjo.kjo_32_23</a>.</li>
+												    <li>Rizwan, Mohd.A. (2020) ‘Correlation and regression’, <i>Machine Learning and Big Data</i>, pp. 53–69. <a href="https://doi.org/10.1002/9781119654834.ch3" target="_blank">doi:10.1002/9781119654834.ch3</a>.</li>
+												    <li>Yadav, R.S. (2022) ‘A study of relationship to absentees and score using Machine Learning Method: A case study of linear regression analysis’, <i>IARS International Research Journal</i>, 12(01), pp. 33–39. <a href="https://doi.org/10.51611/iars.irj.v12i01.2022.186" target="_blank">doi:10.51611/iars.irj.v12i01.2022.186</a>.</li>
+												</ol>
 
+
+										<p></p>
 									
+										<p></p><a href="UNIT3 -PART 1.ipynb" download>Click to download notebook for EXERCISE 1 </a><p>
+										<p></p><a href="UNIT3 -PART 2.ipynb" download>Click to download notebook for EXERCISE 2 </a><p>
+										<p></p><a href="UNIT3 -PART 3.ipynb" download>Click to download notebook for EXERCISE 3 </a><p>
+										<p></p><a href="UNIT3 -PART 4.ipynb" download>Click to download notebook for EXERCISE 4 </a><p>
 								</div>
 							</section>
 
