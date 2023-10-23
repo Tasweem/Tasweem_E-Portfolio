@@ -53,29 +53,104 @@
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
-                                                                 						
-										<p>The goal of machine learning, which lies at the nexus of statistics, AI, and computer science, is to derive information from data. It plays a crucial role in a variety of contemporary applications, including internet buying advice and scientific studies like DNA sequence analysis. The decision criteria used in traditional systems were rigid and domain-specific, and they were hard-coded. Machine learning provides flexibility by allowing algorithms to learn from data instead of requiring explicit programming for each circumstance. Machine learning algorithms can be trained to recognise faces in photographs, for instance, while a hard-coded system would be unable to do so.</p>
-										
-										<p>There are two main machine learning techniques:</p>
-										<ol>
-										    <li>Algorithms learn under supervision from input/output pairs that are provided. Examples include recognising scribbled numbers on envelopes, evaluating from medical photographs if tumours are benign, or spotting credit card theft.</li>
-										    <li>Unsupervised learning: No known outcomes are present; only input data is given. It is employed for activities like selecting blog post topics and preference-based client segmentation.</li>
-										</ol>
-										
-										<p>It's imperative to have a thorough understanding of the data and the issue at hand, regardless of the strategy. It's crucial to confirm that the data gathered is pertinent to the issues being addressed and that the machine learning solution is in line with more general goals or corporate objectives.</p>
-										
-										<p>Traditional approaches, with their strict and domain-specific standards, are outclassed by machine learning algorithms' versatility and breadth. Classifiers, as outlined in Miroslav Kubat's book, are the perfect example of this evolution because they convert unprocessed data into useful insights. These classifiers are capable of very accurate predictions thanks to the use of attribute vectors and techniques like iterative specialisation and generalisation.</p>
 
-									        <h3 style="color: #CFA7F6;">Reflection & Practical Use:</h3>
-										<p>The transition from hard-coded systems to machine learning highlights the value of adaptability in the era of big data. The need for systems that can learn, adapt, and forecast becomes more and more important as we produce more data every day. Even though it is a straightforward example, Johnny's pie tastes demonstrate the great power of machine learning to make complex decisions based on a variety of factors. It's exciting to think about how these concepts, when scaled up, may transform companies, and alter how we see complicated occurrences. Kubat's thoughts on classifiers provide us a peek into the complex but incredibly powerful world of machine learning and make us aware of the hidden intricacies that enable our current comforts.</p>
-									        <p></p>
+									<p>K-Means is an iterative clustering algorithm that aims to partition a dataset into K distinct, non-overlapping subsets (or clusters). The goal is to minimize the within-cluster variances and maximize the between-cluster variances.</p>
 									
-									       <h3 style="color: #CFA7F6;">References:</h3>
-									 <ol>
-									    <li>Badillo, S. et al. (2020) ‘An introduction to machine learning’, <i>Clinical Pharmacology & Therapeutics</i>, 107(4), pp. 871–885. <a href="https://doi.org/10.1002/cpt.1796">doi:10.1002/cpt.1796</a>.</li>
-									    <li>Fielding, A.H. (1999) ‘An introduction to machine learning methods’, <i>Machine Learning Methods for Ecological Applications</i>, pp. 1–35. <a href="https://doi.org/10.1007/978-1-4615-5289-5_1">doi:10.1007/978-1-4615-5289-5_1</a>.</li>
-									    <li>Müller, A.C. and Guido, S. (2018) ‘Chapter 1’, in <i>Introduction to machine learning with python: A guide for data scientists</i>. Sebastopol, CA: O’Reilly Media, Inc., pp. 1–23.</li>
-									    <li>Kubat, M. (2021) ‘Chapter 1.1’, in <i>An introduction to machine learning</i>. 2nd edn. Springer International Publishing AG, pp. 1–4.</li>
+									<p>In other words, the K-means method is designed to partition two-way, two-mode data (that is, N objects each having measurements on P variables) into K classes (C1, C2, ::: ,CK), where Ck is the set of nk objects in cluster k, and K is given (<cite>Steinley, 2006</cite>).</p>
+									
+									<h3>Algorithm Process (MacQueen 1967)</h3>
+									<ol>
+									    <li><strong>Initialization:</strong> Select K cluster centres (centroids) from the outset. You can use a heuristic or choose to do this at random.</li>
+									    <li><strong>Assigning:</strong> Put every data point in relation to the closest centroid. Thus, K clusters are formed.</li>
+									    <li><strong>Update:</strong> Determine each cluster's average point position by taking the mean of all the points and moving the centroid there.</li>
+									    <li><strong>Convergence:</strong> The algorithm has reached its point of convergence when steps 2 and 3 are repeated until the centroids no longer fluctuate noticeably.</li>
+									</ol>
+									
+									<p>Python's Scikit-Learn library provides an easy-to-use implementation of the K-Means algorithm.</p>
+									
+									<h3>Important Considerations (Lloyd, 1982)</h3>
+									<ul>
+									    <li>Scaling features is critical so that one trait does not dominate the grouping owing to its higher scale.</li>
+									    <li>Choosing K: Use methods such as the Elbow method, which plots variance as a function of cluster number. The curve's "elbow" reflects an ideal value for K (a trade-off between accuracy and computing expense).</li>
+									    <li>Multiple Initializations: Run the algorithm with different initializations several times and select the best result.</li>
+									</ul>
+
+							<h3 style="color: #CFA7F6;">ACTIVITY: TASK A</h3>	
+									<p>Perform K-Means clustering on the dataset, iris.csv (from the UCI Machine Learning Repository). Before using the data for clustering, you might have to remove a few columns because the K-Means algorithm involves the calculation of Euclidian distance. You can choose various values of K; however, you must also choose K = 3 in this case. Upon clustering at K = 3, check how much similar your three clusters are as compared to the labels of species – setosa, versicolour, and verginica.</p>
+									
+									<h3>1. Inspection of Dataset:</h3>
+									<p>Firstly, the dataset is loaded, and its first few rows are inspected.</p>
+									<img src="images/ML_Unit6_P1.png" alt="PIC 1">
+									<p>The dataset contains the following columns:</p>
+									<ul>
+									    <li>sepal_length</li>
+									    <li>sepal_width</li>
+									    <li>petal_length</li>
+									    <li>petal_width</li>
+									    <li>species</li>
+									</ul>
+									
+									<h3>2. Data Preparation:</h3>
+									<p>The first four columns are numeric and suitable for clustering. The last column, species, contains the labels that we can use to compare the clustering results. Thus, we drop the last column.</p>
+									
+									<h3>3. K-Means Clustering:</h3>
+									<p>We'll perform K-Means clustering for a range of K values and compute the silhouette score for each value.</p>
+									<p>The silhouette scores for various values of K are as follows:</p>
+									<table>
+									    <tr>
+									        <th>K Value</th>
+									        <th>Silhouette Score</th>
+									    </tr>
+									    <tr><td>1</td><td>0.6808</td></tr>
+									    <tr><td>2</td><td>0.5526</td></tr>
+									    <tr><td>3</td><td>0.4978</td></tr>
+									    <tr><td>4</td><td>0.4885</td></tr>
+									    <tr><td>5</td><td>0.3682</td></tr>
+									    <tr><td>6</td><td>0.3577</td></tr>
+									    <tr><td>7</td><td>0.3591</td></tr>
+									    <tr><td>8</td><td>0.3424</td></tr>
+									    <tr><td>9</td><td>0.3166</td></tr>
+									</table>
+									
+									<h3>4. Silhouette Score Visualization:</h3>
+									<p>Then, we'll visualize the silhouette scores to determine the optimal number of clusters.</p>
+									<img src="images/ML_Unit6_P3.png" alt="PIC 3">
+									<p>K=2 has the greatest silhouette score, as can be seen from the plot of silhouette scores for different values of K. K=3, on the other hand, is still a logical option and is not far behind, particularly considering the iris dataset's three unique species.</p>
+									<p>In conclusion, K=3 is better in line with the dataset's natural structure and our past understanding of the iris species, even if K=2 offers the greatest silhouette score. This highlights how crucial it is to comprehend the data and have subject expertise when making judgements based on clustering results.</p>
+									
+									<h3>5. Clustering with K=3:</h3>
+									<p>Thus, the K-Means clustering is used on the dataset for K=3.</p>
+									
+									<h3>6. Cross-tabulation:</h3>
+									<p>Then, a cross-tabulation or confusion matrix between the predicted clusters and the actual species labels is created. This is to compare the clusters to the given species labels to see how closely the clustering matches the actual species categories.</p>
+									<img src="images/ML_Unit6_P4.png" alt="PIC 4">
+									<p>The following findings are obtained from the cross-tabulation of the actual species and the anticipated clusters:</p>
+									<ul>
+									    <li>It is accurate to classify all 50 of the setosa species samples into cluster 1.</li>
+									    <li>Two samples are sorted into cluster 2 and 48 samples are placed into cluster 0 for the versicolor species.</li>
+									    <li>Thirteen samples are placed in cluster 0 for the virginica species, while thirty-six samples are placed in cluster 2.</li>
+									    <li>For the setosa species, the grouping appears to function well overall, but there is considerable overlap with versicolor and virginica.</li>
+									</ul>
+									
+									
+							  <h3 style="color: #CFA7F6;">Reflection:</h3>									
+								       <p>K-Means clustering is more than a simple algorithm. Its real-world applications are extensive and significant, encompassing a wide range of sectors. Mastering K-Means means having a flexible tool at their disposal that can extract insights from data, improve machine learning models, and solve practical business issues. As businesses and organisations continue to rely on data-driven decision-making, K-Means and its applications in real life will become increasingly important.</p>
+
+									
+							  <h3 style="color: #CFA7F6;">References:</h3>
+									<ol>
+									    <li>
+									        Steinley, Douglas. (2006) ‘K‐means clustering: A half‐century synthesis’, <i>British Journal of Mathematical and Statistical Psychology</i>, 59(1), pp. 1–34. <a href="https://doi.org/10.1348/000711005x48266" target="_blank">doi:10.1348/000711005x48266</a>.
+									    </li>
+									    <li>
+									        MacQueen, J.B. (1967) Some Methods for Classification and Analysis of Multivariate Observations. In: <i>Proceedings of the 5th Berkeley Symposium on Mathematical Statistics and Probability, Volume 1: Statistics</i>, University of California Press, Berkeley, 281-297.
+									    </li>
+									    <li>
+									        Lloyd, S. (1982) ‘Least squares quantization in PCM’, <i>IEEE Transactions on Information Theory</i>, 28(2), pp. 129–137. <a href="https://doi.org/10.1109/tit.1982.1056489" target="_blank">doi:10.1109/tit.1982.1056489</a>.
+									    </li>
+									    <li>
+									        Pedregosa, F. et al. (1970) Scikit-Learn: Machine learning in Python, <i>Journal of Machine Learning Research</i>. Available at: <a href="https://jmlr.csail.mit.edu/papers/v12/pedregosa11a.html" target="_blank">https://jmlr.csail.mit.edu/papers/v12/pedregosa11a.html</a> (Accessed: 19 October 2023). 
+									    </li>
 									</ol>
 
 									
