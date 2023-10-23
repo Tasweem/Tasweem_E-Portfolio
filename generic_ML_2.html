@@ -109,7 +109,7 @@
 												<p>EDA is carried out on the auto-mpg dataset, which provides information on the mileage per gallon performance of different cars.</p>
 												
 												<p>After the necessary libraries and the dataset have been loaded, we can proceed with the EDA. In order to get an initial glance of the dataset, the <code>head()</code> and <code>tail()</code> function is used to display the first and the last 5 rows of the dataset.</p>
-												<p><img src="PIC 1" alt="Dataset Preview"></p>
+												<p><img src="images/ML_Unit2_P1.png" alt="Dataset Preview"></p>
 												
 												<p>Here's a brief overview of the dataset:</p>
 												<ul>
@@ -127,42 +127,42 @@
 												<p>For instance, the first car in the dataset is a "chevrolet chevelle malibu" with 18.0 mpg, 8 cylinders, and so forth and the last car is a "chevy s-10" with 31.0 mpg, 4 cylinders.</p>
 												
 												<p>The shape of the df_auto_mpg DataFrame that is the number of rows and columns is determined as shown below:</p>
-												<p><img src="images/ML_Unit2_P1.png" alt="Shape of Dataset"></p>
+												<p><img src="images/ML_Unit2_P2.png" alt="Shape of Dataset"></p>
 												<p>The dataset has 398 rows and 9 columns. That is, there are 398 car entries, each with 9 attributes (mpg, cylinders, displacement, horsepower, weight, acceleration, model year, origin, and car name).</p>
 												
 												<p>Now the <code>describe()</code> function is used to display the basic statistics of the dataset such as the count, mean, standard deviation, minimum, 25th percentile, median, 75th percentile, and maximum for each numerical column.</p>
-												<p><img src="PIC 3" alt="Descriptive Statistics"></p>
+												<p><img src="images/ML_Unit2_P3.png" alt="Descriptive Statistics"></p>
 												
 												<p>Next, the numeric columns and categorical columns are identified as it can be useful for various analyses and conversion of categorical values to numerical values.</p>
-												<p><img src="PIC 4" alt="Identifying Data Types"></p>
+												<p><img src="images/ML_Unit2_P4.png" alt="Identifying Data Types"></p>
 												
 												<p>The columns 'mpg', 'cylinders', 'displacement', 'weight', 'acceleration', 'model year', and 'origin' contain numeric data and the columns 'horsepower' and 'car name’ contain categorical data.</p>
 												
 												<p>We then proceed to identify the missing values in each column.</p>
-												<p><img src="PIC 5" alt="Missing Values"></p>
+												<p><img src="images/ML_Unit2_P5.png" alt="Missing Values"></p>
 												<p>As it can be seen, there are no missing values in the dataset.</p>
 												
 												<p>Skewness measures the asymmetry of the probability distribution of a real-valued random variable about its mean. Positive skewness indicates a distribution with an asymmetric tail extending toward more positive values, while negative skewness indicates a distribution with an asymmetric tail extending toward more negative values.</p>
 												<p>Kurtosis measures the "tailedness" of the probability distribution of a real-valued random variable. High kurtosis can indicate that the data has heavy tails or outliers.</p>
 												<p>The skewness and kurtosis for the numerical columns in the dataset is shown below:</p>
-												<p><img src="PIC 6" alt="Skewness and Kurtosis"></p>
+												<p><img src="images/ML_Unit2_P6.png" alt="Skewness and Kurtosis"></p>
 												
 												<p>Columns ‘mpg’, ‘cylinders’, ‘displacement’, ‘weight’, ‘acceleration’, and ‘origin’ have positive skewness, indicating that they are right-skewed. The ‘model year‘ column has a skewness value close to 0, suggesting it's nearly symmetric. The ‘acceleration’ column is leptokurtic, that is it has heavier tails and a sharper peak compared to a normal distribution. Columns ‘mpg’, ‘cylinders’, ‘displacement’, ‘weight’, ‘model year’, and ‘origin’ are platykurtic, indicating they have lighter tails and flatter peaks than the normal distribution.</p>
 												
-												<p><img src="PIC 7" alt="Distribution Plot 1">
-												<img src="PIC 8" alt="Distribution Plot 2">
-												<img src="PIC 9" alt="Distribution Plot 3">
-												<img src="PIC 10" alt="Distribution Plot 4"></p>
+												<p><img src="images/ML_Unit2_P7.png" alt="Distribution Plot 1">
+												<img src="images/ML_Unit2_P8.png" alt="Distribution Plot 2">
+												<img src="images/ML_Unit2_P9.png" alt="Distribution Plot 3">
+												<img src="images/ML_Unit2_P10.png" alt="Distribution Plot 4"></p>
 												
 												<p>The 'mpg' variable from the df_auto_mpg dataset appears to be best described by the Johnson SU distribution among the three tested. It captures the skewness and kurtosis of the 'mpg' variable relatively well. It's evident that many cars in the dataset have fuel efficiencies between 15-25 mpg. Fewer cars achieve extremely high fuel efficiencies. The normal distribution is not an ideal fit, suggesting that the data has some skewness and might not be symmetrically distributed around its mean.</p>
 												
 												<p>In order to understand the correlation between the different variables and ‘mpg’, the correlation is calculated.</p>
-												<p><img src="PIC 11" alt="Correlation"></p>
+												<p><img src="images/ML_Unit2_P12.png" alt="Correlation"></p>
 												
 												<p>The features 'weight', 'displacement', and 'cylinders' have a strong negative correlation with 'mpg', meaning as they increase, the 'mpg' generally decreases. On the other hand, 'model year', 'origin', and 'acceleration' have a positive correlation with 'mpg', indicating that higher values in these features are associated with higher 'mpg'. The strength of these relationships can be inferred from the magnitude of the correlation coefficients, with values closer to -1 or 1 indicating stronger relationships.</p>
 												
 												<p>Now, to visualise the relationships between the numerical variables, a correlation heatmap is used.</p>
-												<p><img src="PIC 12" alt="Correlation Heatmap"></p>
+												<p><img src="images/ML_Unit2_P13.png" alt="Correlation Heatmap"></p>
 												
 												<p>It can be seen that:</p>
 												<ul>
@@ -181,11 +181,11 @@
 												
 												<p>Based on the correlation heatmap, the following pairs for scatter plots are chosen to further understand vehicle performance attributes and their interdependencies.</p>
 												
-												<p><img src="PIC 13" alt="Scatter Plot 1">
-												<img src="PIC 14" alt="Scatter Plot 2">
-												<img src="PIC 15" alt="Scatter Plot 3">
-												<img src="PIC 16" alt="Scatter Plot 4">
-												<img src="PIC 17" alt="Scatter Plot 5"></p>
+												<p><img src="images/ML_Unit2_P13.png" alt="Scatter Plot 1">
+												<img src="images/ML_Unit2_P14.png" alt="Scatter Plot 2">
+												<img src="images/ML_Unit2_P15.png" alt="Scatter Plot 3">
+												<img src="images/ML_Unit2_P16.png" alt="Scatter Plot 4">
+												<img src="images/ML_Unit2_P17.png" alt="Scatter Plot 5"></p>
 												
 												<p>•	As displacement increases, mpg also decreases, indicating a negative correlation.<br>
 												•	Heavier cars (weight) tend to have lower mpg, suggesting that heavier vehicles are less fuel-efficient.<br>
@@ -193,22 +193,37 @@
 												•	There's a cluster of data points at higher displacement and higher weight, indicating that larger engines are typically found in heavier vehicles.</p>
 												
 												<p>In order to understand the number of unique categories in the categorical variables, the following code is used:</p>
-												<p><img src="PIC 18" alt="Unique Categories"></p>
+												<p><img src="images/ML_Unit2_P18.png" alt="Unique Categories"></p>
 												
 												<p>It can be seen that the feature 'horsepower' has '94' unique categories and the feature 'car name' has '305' unique categories.</p>
 												
 												<p>Finally, the categorical variables are converted to numerical columns primarily because machine learning algorithms require numerical input.</p>
-												<p><img src="PIC 19" alt="Categorical to Numerical"></p>
+												<p><img src="images/ML_Unit2_P19.png" alt="Categorical to Numerical"></p>
 									
 
-									       <h3 style="color: #CFA7F6;">Practical Use:</h3>
-									              <p>As a person working in the hospitality industry, a very typical application of web scraping in this sector is to fetch data from portals for booking and rating holiday offers that are normally not accessible via APIs, such as the TripAdvisor portal mentioned above. These typically include product descriptions and pricing data provided by the portal operators as well as user-generated content, such as reviews. As a result, the data can be used to compare and analyse the quality of various vacation packages as well as, of course, track pricing, which, in turn, allow general trends in the industry to be observed and compared across different regions.</p> 
-									              <p>Searching for and extracting the needed text passages using text analysis functions, such as regular expressions, is usually a complex and time-consuming task that is also prone to errors. Therefore, specialized packages including “BeautifulSoup” is a good solution. </p>
-									              Then, the data must undergo several pre-processing steps to be used and analysed by means of a suitable method, for example, regression or classification for predictions.</p>
-									              <p></p>
-									              <p></p>
+									       <h3 style="color: #CFA7F6;">Reflection:</h3>
+												<p>Furthermore, EDA is not just about preparing for modelling; it's also about generating insights. Through various visualization techniques and statistical measures, EDA provides a narrative about the data's underlying structures. These insights can then guide further data processing, feature engineering, or even business strategies.</p>
+												<p>In conclusion, as data continues to grow in volume and complexity, tools like Python and methodologies like EDA will be instrumental in shaping the future of business. They will enable companies to adapt to changing landscapes, make informed decisions, and stay ahead of the curve in an increasingly competitive market.</p>
 									
-										<p></p><a href="Web Scraping.ipynb" download>Click to download notebook for Web Scraping </a><p>
+									
+									       <h3 style="color: #CFA7F6;">References:</h3>	
+												<ol>
+												    <li>Kumar, S. (2019) <i>Exploratory data analysis ...topic that is neglected in data science projects</i>, Medium. <a href="https://towardsdatascience.com/exploratory-data-analysis-topic-that-is-neglected-in-data-science-projects-9962ae078a56" target="_blank" rel="noopener">Available here</a> (Accessed: 11 October 2023).</li>
+												    
+												    <li>Sahoo*, K. et al. (2019) ‘Exploratory data analysis using Python’, <i>International Journal of Innovative Technology and Exploring Engineering</i>, 8(12), pp. 4727–4735. <a href="https://doi.org/10.35940/ijitee.l3591.1081219" target="_blank" rel="noopener">doi:10.35940/ijitee.l3591.1081219</a>.</li>
+												    
+												    <li><i>What is exploratory data analysis?</i> IBM. <a href="https://www.ibm.com/topics/exploratory-data-analysis" target="_blank" rel="noopener">Available here</a> (Accessed: 11 October 2023).</li>
+												    
+												    <li>Chatfield, C. (1986) ‘Exploratory Data Analysis’, <i>European Journal of Operational Research</i>, 23(1), pp. 5–13. <a href="https://doi.org/10.1016/0377-2217(86)90209-" target="_blank" rel="noopener">doi:10.1016/0377-2217(86)90209-</a></li>
+												    
+												    <li>Patil, P. (2022) <i>What is exploratory data analysis?</i>, Medium. <a href="https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15" target="_blank" rel="noopener">Available here</a> (Accessed: 11 October 2023).</li>
+												</ol>
+									
+
+									
+									<p></p>
+									
+										<p></p><a href="UNIT2 - EDA.ipynb" download>Click to download notebook for Exploratory Data Analysis </a><p>
 
 								</div>
 							</section>
