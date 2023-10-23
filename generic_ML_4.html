@@ -112,18 +112,18 @@
 												    <li>Now, since we want to investigate any correlation between the mean population of each country and the mean per capita GDP from 2001 to 2021 and the GDP dataset does not have data for the year 2021. We will filter the data to include only the years from 2001 to 2020.</li>
 												    <li>As seen in the data, there are missing values in the GDP data and the population data. Thus, to handle the missing values, Linear Interpolation is used.</li>
 												    <li>The mean GDP and mean population for each country from 2001 to 2021 is calculated.</li>
-												    <img src="images/ML_Unit4_P1.png" alt="Dataset after preprocessing">
+												    <img src="images/ML_Unit4_PIC1.png" alt="Dataset after preprocessing">
 												</ol>
 												
 												<h2>Correlation Analysis</h2>
 												
 												<ol start="6">
 												    <li>Both mean GDP and mean population are combined into one Dataframe. Then, mean per capita GDP for each country is calculated.</li>
-												    <img src="images/ML_Unit4_P2.png" alt="Correlation Analysis Data">
+												    <img src="images/ML_Unit4_PIC2.png" alt="Correlation Analysis Data">
 												    <li>However, Aruba appears twice in the results. This requires further inspection.</li>
-												    <img src="images/ML_Unit4_P3.png" alt="Duplicate Check">
+												    <img src="images/ML_Unit4_PIC3.png" alt="Duplicate Check">
 												    <li>A scatterplot is used to visualize the relationship.</li>
-												    <img src="images/ML_Unit4_P4.png" alt="Scatterplot of Population vs GDP">
+												    <img src="images/ML_Unit4_PIC4.png" alt="Scatterplot of Population vs GDP">
 												</ol>
 												
 												<p>From the plot:</p>
@@ -139,7 +139,7 @@
 												<p>Perform linear regression, where the independent variable is the mean population of each country (from 2001 to 2021) and dependent variable is mean per capita GDP (from 2001 to 2021).</p>
 												
 												<figure>
-												    <img src="images/ML_Unit4_P5.png" alt="Linear Regression Analysis">
+												    <img src="images/ML_Unit4_PIC5.png" alt="Linear Regression Analysis">
 												    <figcaption>The linear regression analysis reveals a significant correlation.</figcaption>
 												</figure>
 												
