@@ -49,39 +49,158 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1> &#10021; Web Scraping</h1>
+										<h1> Unit 2: Exploratory Data Analysis</h1>
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
                                                                  						
 
-									      <p>The procedure of gathering data from the web is called web scraping. To put it another way, it's a programme that retrieves information from websites (often HTML pages) and parses it to find particular information.
-									         Web scraping is used to gather data for market research, real estate analysis, corporate intelligence, and other purposes.
-									         The tool learned through this module is called beautifulsoup, is excellent at parsing collected HTML data.
+									      <p><p><b>Exploratory Data Analysis (EDA)</b>, introduced by John Tukey in the 1970s, marked a departure from traditional statistics, emphasizing visual exploration to understand data patterns and relationships (Kumar, 2019). EDA avoids premature assumptions about data. With the data surge in today's digital era, manual analysis became impractical. Python emerged as a solution, providing user-friendly, open-source data analysis tools. Modern businesses, particularly in e-commerce, leverage data analytics to derive insights from customer feedback, enhancing marketing and boosting sales. As data becomes pivotal in business strategies, tools like Python and EDA methodologies have become essential (Sahoo et al, 2019).</p>
 									       </p>
-									      <h3 style="color: #CFA7F6;">Activity:</h3>
 
-									                 <p>Instructions: Write a web scraping script in Python using the key word 'Data Scientist' and parse this data into either an XML or JSON file. Perform the web scraping with the beautifulsoup4 and Request program modules.</p>
-									                 <p>The provided code demonstrates how to scrape book titles containing the phrase "Data Scientist" from the Goodreads website and save the data into both JSON and XML formats.</p>
-    									                 <p>Code Functionality:</p>
-   									                 <ol>
-    									                     <li>Necessary modules are imported, including requests, json, xml.etree.ElementTree, and beautifulsoup4.</li>
-     									                     <li>The URL for the search page on Goodreads is defined, and parameters for the search query are specified.</li>
-     									                     <li>A GET request is sent to the search page using requests.get(), passing the URL and parameters.</li>
-     									                     <li>The HTML content of the response is parsed using BeautifulSoup's BeautifulSoup class, creating a BeautifulSoup object named soup.</li>
-   									                     <li>The book elements on the page are found using soup.find_all(), specifying the tag and class attributes that match the book elements.</li>
-   									                     <li>An empty list named books_data is initialized to store the extracted book titles.</li>
-    									                     <li>A loop iterates over each book element and extracts the title using find() and text.strip().</li>
-   							        	                     <li>A dictionary is created for each book with the extracted title, and it is appended to the books_data list.</li>
-    									                     <li>The scraped book data is saved into a JSON file using json.dump() and an XML file using ElementTree.</li>
-     									                     <li>A success message is printed to indicate that the data has been successfully scraped and saved.</li>
-									                    </ol>
-									              <p>The codes and results are shown below:</p>
-									              <img src="images/web_scraping1.png" alt="" />
-									              <img src="images/web_scraping2.png" alt="" />
-									              <p>The code allows for the scraping of book titles from the Goodreads search results, store them in JSON and XML files.</p>
-									              <p>Note that it is crucial to check and understand the website's terms of service to ensure compliance with scraping activities. Otherwise , it is recommended to use websites and APIs that provide structured data. </p>
 									
+									      <h3 style="color: #CFA7F6;">Importance:</h3>
+
+												<p>The primary reason is that <b>EDA</b> serves as the foundation for all subsequent modelling efforts. That is, it gives the description of data by understanding data types and basic statistics using functions like <code>describe()</code>. This gives a sense of central tendency, dispersion, and shape of the dataset's distribution.</p>
+												
+												<p>Before diving into complex predictive or descriptive models, one needs to ensure that the data is of good quality and relevance.</p>
+												
+												<p>EDA aids in this by highlighting potential problems in the dataset, such as:</p>
+												
+												<ol>
+												    <li><b>Handling missing values:</b> 
+												    Real-world data often has missing values. Techniques include:
+												    <ul>
+												        <li>Dropping missing values.</li>
+												        <li>Filling missing values with test statistics (mean, median).</li>
+												        <li>Predicting missing values using machine learning.</li>
+												    </ul>
+												    </li>
+												    
+												    <li><b>Handling outliers:</b> Outliers can arise from data collection errors or natural variations. Detection and treatment methods include:
+												    <ul>
+												        <li>Box Plots</li>
+												        <li>Scatter Plots</li>
+												        <li>Z-score</li>
+												        <li>IQR (Inter-Quartile Range)</li>
+												    </ul>
+												    </li>
+												
+												    <li><b>Understanding relationships through plots:</b> It also helps in understanding if the selected features for modelling are apt, or if there exist correlations between variables that might unduly influence the model's performance. Visual techniques like Histograms and Heat Maps help identify relationships and patterns.</li>
+												</ol>
+											
+
+									      <h3 style="color: #CFA7F6;"> Consequences:</h3>
+																					
+												<p>Jumping directly to machine learning without EDA can lead to:</p>
+												<ul>
+												    <li>Inaccurate models.</li>
+												    <li>Correct models trained on wrong data.</li>
+												    <li>Inefficient use of resources due to late-stage data issues.</li>
+												    <li>Potential for skewed results, outliers, and inconsistencies.</li>
+												</ul>
+												
+												<p>Using the trip analogy, bypassing the exploration phase can lead to unforeseen challenges, just as in machine learning, skipping EDA can result in various problems.</p>
+
+									
+									      <h3 style="color: #CFA7F6;"> Example:</h3>
+											
+												<h3>An Exploratory Data Analysis (EDA)</h3>
+												<p>EDA is carried out on the auto-mpg dataset, which provides information on the mileage per gallon performance of different cars.</p>
+												
+												<p>After the necessary libraries and the dataset have been loaded, we can proceed with the EDA. In order to get an initial glance of the dataset, the <code>head()</code> and <code>tail()</code> function is used to display the first and the last 5 rows of the dataset.</p>
+												<p><img src="PIC 1" alt="Dataset Preview"></p>
+												
+												<p>Here's a brief overview of the dataset:</p>
+												<ul>
+												    <li><b>mpg:</b> Miles per gallon</li>
+												    <li><b>cylinders:</b> Number of cylinders in the vehicle</li>
+												    <li><b>displacement:</b> Engine displacement (cubic inches)</li>
+												    <li><b>horsepower:</b> Horsepower of the vehicle. It appears to be of type string, which suggests there might be some non-numeric values.</li>
+												    <li><b>weight:</b> Weight of the vehicle</li>
+												    <li><b>acceleration:</b> Acceleration (seconds to reach 60 mph)</li>
+												    <li><b>model year:</b> Model year of the vehicle</li>
+												    <li><b>origin:</b> Origin of the car (1: America, 2: Europe, 3: Asia)</li>
+												    <li><b>car name:</b> Name of the car</li>
+												</ul>
+												
+												<p>For instance, the first car in the dataset is a "chevrolet chevelle malibu" with 18.0 mpg, 8 cylinders, and so forth and the last car is a "chevy s-10" with 31.0 mpg, 4 cylinders.</p>
+												
+												<p>The shape of the df_auto_mpg DataFrame that is the number of rows and columns is determined as shown below:</p>
+												<p><img src="PIC 2" alt="Shape of Dataset"></p>
+												<p>The dataset has 398 rows and 9 columns. That is, there are 398 car entries, each with 9 attributes (mpg, cylinders, displacement, horsepower, weight, acceleration, model year, origin, and car name).</p>
+												
+												<p>Now the <code>describe()</code> function is used to display the basic statistics of the dataset such as the count, mean, standard deviation, minimum, 25th percentile, median, 75th percentile, and maximum for each numerical column.</p>
+												<p><img src="PIC 3" alt="Descriptive Statistics"></p>
+												
+												<p>Next, the numeric columns and categorical columns are identified as it can be useful for various analyses and conversion of categorical values to numerical values.</p>
+												<p><img src="PIC 4" alt="Identifying Data Types"></p>
+												
+												<p>The columns 'mpg', 'cylinders', 'displacement', 'weight', 'acceleration', 'model year', and 'origin' contain numeric data and the columns 'horsepower' and 'car name’ contain categorical data.</p>
+												
+												<p>We then proceed to identify the missing values in each column.</p>
+												<p><img src="PIC 5" alt="Missing Values"></p>
+												<p>As it can be seen, there are no missing values in the dataset.</p>
+												
+												<p>Skewness measures the asymmetry of the probability distribution of a real-valued random variable about its mean. Positive skewness indicates a distribution with an asymmetric tail extending toward more positive values, while negative skewness indicates a distribution with an asymmetric tail extending toward more negative values.</p>
+												<p>Kurtosis measures the "tailedness" of the probability distribution of a real-valued random variable. High kurtosis can indicate that the data has heavy tails or outliers.</p>
+												<p>The skewness and kurtosis for the numerical columns in the dataset is shown below:</p>
+												<p><img src="PIC 6" alt="Skewness and Kurtosis"></p>
+												
+												<p>Columns ‘mpg’, ‘cylinders’, ‘displacement’, ‘weight’, ‘acceleration’, and ‘origin’ have positive skewness, indicating that they are right-skewed. The ‘model year‘ column has a skewness value close to 0, suggesting it's nearly symmetric. The ‘acceleration’ column is leptokurtic, that is it has heavier tails and a sharper peak compared to a normal distribution. Columns ‘mpg’, ‘cylinders’, ‘displacement’, ‘weight’, ‘model year’, and ‘origin’ are platykurtic, indicating they have lighter tails and flatter peaks than the normal distribution.</p>
+												
+												<p><img src="PIC 7" alt="Distribution Plot 1">
+												<img src="PIC 8" alt="Distribution Plot 2">
+												<img src="PIC 9" alt="Distribution Plot 3">
+												<img src="PIC 10" alt="Distribution Plot 4"></p>
+												
+												<p>The 'mpg' variable from the df_auto_mpg dataset appears to be best described by the Johnson SU distribution among the three tested. It captures the skewness and kurtosis of the 'mpg' variable relatively well. It's evident that many cars in the dataset have fuel efficiencies between 15-25 mpg. Fewer cars achieve extremely high fuel efficiencies. The normal distribution is not an ideal fit, suggesting that the data has some skewness and might not be symmetrically distributed around its mean.</p>
+												
+												<p>In order to understand the correlation between the different variables and ‘mpg’, the correlation is calculated.</p>
+												<p><img src="PIC 11" alt="Correlation"></p>
+												
+												<p>The features 'weight', 'displacement', and 'cylinders' have a strong negative correlation with 'mpg', meaning as they increase, the 'mpg' generally decreases. On the other hand, 'model year', 'origin', and 'acceleration' have a positive correlation with 'mpg', indicating that higher values in these features are associated with higher 'mpg'. The strength of these relationships can be inferred from the magnitude of the correlation coefficients, with values closer to -1 or 1 indicating stronger relationships.</p>
+												
+												<p>Now, to visualise the relationships between the numerical variables, a correlation heatmap is used.</p>
+												<p><img src="PIC 12" alt="Correlation Heatmap"></p>
+												
+												<p>It can be seen that:</p>
+												<ul>
+												    <li>mpg: Negatively correlated with cylinders, displacement, and weight.</li>
+												    <li>cylinders: Positively correlated with displacement and weight.</li>
+												    <li>displacement: Positively correlated with weight.</li>
+												    <li>weight: Negatively correlated with mpg and acceleration.</li>
+												    <li>acceleration: Negatively correlated with cylinders, displacement, and weight.</li>
+												    <li>model year: Mildly positively correlated with mpg.</li>
+												    <li>origin: Positively correlated with mpg and acceleration.</li>
+												</ul>
+												
+												<p>In the dataset, miles per gallon (mpg) tends to decrease as the number of cylinders, engine displacement, and vehicle weight increase. This suggests that heavier cars with larger engines are generally less fuel-efficient. Furthermore, cars with more cylinders typically have a larger engine displacement and are heavier. As cars become heavier, their acceleration tends to decrease. Interestingly, newer car models (represented by the 'model year') show a slight trend towards better fuel efficiency.</p>
+												
+												<p>Lastly, the 'origin' of cars indicates some trends: cars from certain origins tend to be more fuel-efficient and have better acceleration.</p>
+												
+												<p>Based on the correlation heatmap, the following pairs for scatter plots are chosen to further understand vehicle performance attributes and their interdependencies.</p>
+												
+												<p><img src="PIC 13" alt="Scatter Plot 1">
+												<img src="PIC 14" alt="Scatter Plot 2">
+												<img src="PIC 15" alt="Scatter Plot 3">
+												<img src="PIC 16" alt="Scatter Plot 4">
+												<img src="PIC 17" alt="Scatter Plot 5"></p>
+												
+												<p>•	As displacement increases, mpg also decreases, indicating a negative correlation.<br>
+												•	Heavier cars (weight) tend to have lower mpg, suggesting that heavier vehicles are less fuel-efficient.<br>
+												•	Vehicles with more cylinders usually have lower mpg, implying that engines with more cylinders might consume more fuel.<br>
+												•	There's a cluster of data points at higher displacement and higher weight, indicating that larger engines are typically found in heavier vehicles.</p>
+												
+												<p>In order to understand the number of unique categories in the categorical variables, the following code is used:</p>
+												<p><img src="PIC 18" alt="Unique Categories"></p>
+												
+												<p>It can be seen that the feature 'horsepower' has '94' unique categories and the feature 'car name' has '305' unique categories.</p>
+												
+												<p>Finally, the categorical variables are converted to numerical columns primarily because machine learning algorithms require numerical input.</p>
+												<p><img src="PIC 19" alt="Categorical to Numerical"></p>
+									
+
 									       <h3 style="color: #CFA7F6;">Practical Use:</h3>
 									              <p>As a person working in the hospitality industry, a very typical application of web scraping in this sector is to fetch data from portals for booking and rating holiday offers that are normally not accessible via APIs, such as the TripAdvisor portal mentioned above. These typically include product descriptions and pricing data provided by the portal operators as well as user-generated content, such as reviews. As a result, the data can be used to compare and analyse the quality of various vacation packages as well as, of course, track pricing, which, in turn, allow general trends in the industry to be observed and compared across different regions.</p> 
 									              <p>Searching for and extracting the needed text passages using text analysis functions, such as regular expressions, is usually a complex and time-consuming task that is also prone to errors. Therefore, specialized packages including “BeautifulSoup” is a good solution. </p>
