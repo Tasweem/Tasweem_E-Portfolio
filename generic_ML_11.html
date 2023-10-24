@@ -49,35 +49,148 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1> &#10021; Unit 1 - Introduction to Machine Learning (ML) </h1>
+										<h1> &#10021; Unit 11: Model Selection and Evaluation </h1>
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
-                                                                 						
-										<p>The goal of machine learning, which lies at the nexus of statistics, AI, and computer science, is to derive information from data. It plays a crucial role in a variety of contemporary applications, including internet buying advice and scientific studies like DNA sequence analysis. The decision criteria used in traditional systems were rigid and domain-specific, and they were hard-coded. Machine learning provides flexibility by allowing algorithms to learn from data instead of requiring explicit programming for each circumstance. Machine learning algorithms can be trained to recognise faces in photographs, for instance, while a hard-coded system would be unable to do so.</p>
-										
-										<p>There are two main machine learning techniques:</p>
-										<ol>
-										    <li>Algorithms learn under supervision from input/output pairs that are provided. Examples include recognising scribbled numbers on envelopes, evaluating from medical photographs if tumours are benign, or spotting credit card theft.</li>
-										    <li>Unsupervised learning: No known outcomes are present; only input data is given. It is employed for activities like selecting blog post topics and preference-based client segmentation.</li>
-										</ol>
-										
-										<p>It's imperative to have a thorough understanding of the data and the issue at hand, regardless of the strategy. It's crucial to confirm that the data gathered is pertinent to the issues being addressed and that the machine learning solution is in line with more general goals or corporate objectives.</p>
-										
-										<p>Traditional approaches, with their strict and domain-specific standards, are outclassed by machine learning algorithms' versatility and breadth. Classifiers, as outlined in Miroslav Kubat's book, are the perfect example of this evolution because they convert unprocessed data into useful insights. These classifiers are capable of very accurate predictions thanks to the use of attribute vectors and techniques like iterative specialisation and generalisation.</p>
+									
+											    <p>Model selection and evaluation are essential steps in machine learning (ML) and deep learning (DL). They ensure that our model performs well not only on our training data but also on new, unseen data. Hastie and et al emphasized this by noting that the best model choice depends on the specific dataset and the problem at hand.</p>
+											
+											    <p>This unit highlighted that significant challenge in modelling is finding the right balance between bias and variance. A model that's too simple might overlook key patterns, resulting in underfitting. Conversely, a model that's too intricate might excel on training data but falter with new data, a phenomenon known as overfitting. Several techniques, like tweaking the model, expanding data variety, and leveraging multiple models, are employed to address these issues.</p>
+											
+											    <p>In the journey of choosing the best model, various methods come into play. Some rely on mathematical criteria, like the Bayesian Information Criterion, while others, like cross-validation, are more hands-on. Once a model is developed, its classification efficacy is gauged using metrics like sensitivity and specificity. However, a standout metric that's often highlighted is the Area Under The Curve (AUC) of the Receiver Operating Characteristics (ROC) Curve. It offers a snapshot of the model's ability to differentiate between distinct classes or groups.</p>
+
+
+									
+							        	        <h3 style="color: #CFA7F6;">E-Portfolio Activity: Model Performance Measurement:</h3>
+
+									        <h2>Impact of change of the different parameters on AUC and R2 error</h3>
+
+											    <p>In the python notebook 2 models namely Logistic Regression and One Vs Rest Classifier.</p>
+																				
+										<h2>1. Logistic Regression with Breast Cancer Dataset</h2>
+																				
+											    <p>Firstly, we will change the parameter C in the logistic regression model which uses the breast cancer dataset and assess the impact on the AUC and R2.</p>
+											
+												    <table>
+											        <tr>
+											            <th>C</th>
+											            <th>AUC</th>
+											            <th>R2</th>
+											        </tr>
+											        <tr>
+											            <td>0.001</td>
+											            <td>0.975054</td>
+											            <td>0.768030</td>
+											        </tr>
+											        <tr>
+											            <td>0.010</td>
+											            <td>0.984739</td>
+											            <td>0.799880</td>
+											        </tr>
+											        <tr>
+											            <td>0.100</td>
+											            <td>0.991412</td>
+											            <td>0.840486</td>
+											        </tr>
+											        <tr>
+											            <td>1</td>
+											            <td>0.994807</td>
+											            <td>0.882230</td>
+											        </tr>
+											        <tr>
+											            <td>10</td>
+											            <td>0.995468</td>
+											            <td>0.903958</td>
+											        </tr>
+											        <tr>
+											            <td>100</td>
+											            <td>0.995204</td>
+											            <td>0.903635</td>
+											        </tr>
+											    </table>
+											
+																				
+											    <p>Both the AUC score and the R2 tends to increase as the regularization strength decreases (i.e., as C increases), but it starts to plateau and slightly decrease beyond C=10.</p>
+											
+										 <h2>2. One Vs Rest Classifier with Iris Dataset</h2>
+											    <p>Now, we will assess the impact of changing the parameter C on the One Vs Rest Classifier which uses the iris data set and assess the impact on the AUC and R2.</p>
+											    <p>When using the OneVsRestClassifier (OvR) approach with a classifier like SVC, the strategy is to fit one classifier per class, where each classifier treats one of the classes as the positive class and all the other classes combined as the negative class.
+											    In the analysis, I computed the Macro-average AUC (often referred to as "Average AUC") as it gives a quick, equal-weighted summary metric of the model's performance across all classes.</p>
+																		
+												    <table>
+											        <tr>
+											            <th>C</th>
+											            <th>Average AUC</th>
+											            <th>R2</th>
+											        </tr>
+											        <tr>
+											            <td>0.001</td>
+											            <td>0.8948</td>
+											            <td>-6.3935</td>
+											        </tr>
+											        <tr>
+											            <td>0.010</td>
+											            <td>0.8943</td>
+											            <td>-4.3611</td>
+											        </tr>
+											        <tr>
+											            <td>0.100</td>
+											            <td>0.8994</td>
+											            <td>-14.0893</td>
+											        </tr>
+											        <tr>
+											            <td>1.000</td>
+											            <td>0.9055</td>
+											            <td>-30.3932</td>
+											        </tr>
+											        <tr>
+											            <td>10.000</td>
+											            <td>0.9102</td>
+											            <td>-78.7363</td>
+											        </tr>
+											        <tr>
+											            <td>100.000</td>
+											            <td>0.9105</td>
+											            <td>-393.6397</td>
+											        </tr>
+											    </table>
+											
+											
+											    <p>• Average AUC:</p>
+											    <p>As the C parameter increases, the Average AUC slightly increases, suggesting that the classifier's discrimination ability improves with higher regularization strengths. However, the gains plateau around C=10 and C=100.</p>
+											
+											    <p>• R2:</p>
+											    <p>The negative R2 readings are rare for this measure. R2 is typically between 0 and 1, with higher values suggesting a better match. Negative numbers indicate that the model fits the data less well than a straight line.
+											    As C increases, the R2 values become progressively negative, suggesting that the model's predictions diverge from the actual labels. In the context of the OneVsRestClassifier for multi-class classification, these negative R2 values imply that the decision function scores may be misaligned with the genuine multi-class labels. For this sort of model, the metric may not be as informative as it is for ordinary regression models.</p>
+											
+																				
 
 									        <h3 style="color: #CFA7F6;">Reflection & Practical Use:</h3>
-										<p>The transition from hard-coded systems to machine learning highlights the value of adaptability in the era of big data. The need for systems that can learn, adapt, and forecast becomes more and more important as we produce more data every day. Even though it is a straightforward example, Johnny's pie tastes demonstrate the great power of machine learning to make complex decisions based on a variety of factors. It's exciting to think about how these concepts, when scaled up, may transform companies, and alter how we see complicated occurrences. Kubat's thoughts on classifiers provide us a peek into the complex but incredibly powerful world of machine learning and make us aware of the hidden intricacies that enable our current comforts.</p>
-									        <p></p>
-									
-									       <h3 style="color: #CFA7F6;">References:</h3>
-									 <ol>
-									    <li>Badillo, S. et al. (2020) ‘An introduction to machine learning’, <i>Clinical Pharmacology & Therapeutics</i>, 107(4), pp. 871–885. <a href="https://doi.org/10.1002/cpt.1796">doi:10.1002/cpt.1796</a>.</li>
-									    <li>Fielding, A.H. (1999) ‘An introduction to machine learning methods’, <i>Machine Learning Methods for Ecological Applications</i>, pp. 1–35. <a href="https://doi.org/10.1007/978-1-4615-5289-5_1">doi:10.1007/978-1-4615-5289-5_1</a>.</li>
-									    <li>Müller, A.C. and Guido, S. (2018) ‘Chapter 1’, in <i>Introduction to machine learning with python: A guide for data scientists</i>. Sebastopol, CA: O’Reilly Media, Inc., pp. 1–23.</li>
-									    <li>Kubat, M. (2021) ‘Chapter 1.1’, in <i>An introduction to machine learning</i>. 2nd edn. Springer International Publishing AG, pp. 1–4.</li>
-									</ol>
 
+											    <p>The highlights the importance of model selection and evaluation in data science, emphasizing the need for models to provide meaningful insights on new data and generalize their performance based on the dataset and problem definition.</p>
+											
+											    <p>Classification metrics, particularly the AUC of the ROC Curve, are crucial for gauging a model's capability to distinguish between classes. AUC is often used in various fields, such as medical diagnosis and finance. The unit also highlighted the impact of parameter changes on AUC and R<sup>2</sup>, emphasizing the importance of hyperparameter tuning in machine learning. The insights gained from the unit, such as the plateauing of AUC beyond a certain C value and negative R<sup>2</sup> values in multi-class scenarios, underscore the need for iterative model refinement and questioning every metric.</p>
+											
+											    <p>The lessons learned from this unit will serve as a guiding light for data scientists, reminding them of the importance of model selection and evaluation in translating data into real-world impact.</p>
+																			
+
+									       <h3 style="color: #CFA7F6;">References:</h3>
+									
+									
+											<ul>
+											    <li>Hastie, T., Tibshirani, R. and Friedman, J., 2009. <em>The Elements of Statistical Learning</em>. Springer.</li>
+											    <li>Geman, S., Bienenstock, E. and Doursat, R., 1992. Neural networks and the bias/variance dilemma. <em>Neural Computation</em>, 4(1), pp.1-58.</li>
+											    <li>Goodfellow, I., Bengio, Y. and Courville, A., 2016. <em>Deep Learning</em>. MIT Press.</li>
+											    <li>Burnham, K.P. and Anderson, D.R., 2002. Model selection and multimodel inference: a practical information-theoretic approach. Springer.</li>
+											    <li>Kohavi, R., 1995. A study of cross-validation and bootstrap for accuracy estimation and model selection. <em>Proceedings of the 14th International Joint Conference on Artificial Intelligence</em>, 2, pp.1137-1143.</li>
+											    <li>Fawcett, T., 2006. An introduction to ROC analysis. <em>Pattern Recognition Letters</em>, 27(8), pp.861-874.</li>
+											    <li>Bradley, A.P., 1997. The use of the area under the ROC curve in the evaluation of machine learning algorithms. <em>Pattern Recognition</em>, 30(7), pp.1145-1159</li>
+											</ul>
+
+									
+
+									<p></p><a href="Unit 11- Model Performance Measurement.ipynb" download>Click to download notebook for Unit 11- Model Performance Measurement </a><p>
 									
 								</div>
 							</section>
