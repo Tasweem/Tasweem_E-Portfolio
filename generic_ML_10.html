@@ -49,34 +49,66 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1> &#10021; Unit 1 - Introduction to Machine Learning (ML) </h1>
+										<h1> &#10021; Unit 10: CNN Interactive Learning </h1>
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
-                                                                 						
-										<p>The goal of machine learning, which lies at the nexus of statistics, AI, and computer science, is to derive information from data. It plays a crucial role in a variety of contemporary applications, including internet buying advice and scientific studies like DNA sequence analysis. The decision criteria used in traditional systems were rigid and domain-specific, and they were hard-coded. Machine learning provides flexibility by allowing algorithms to learn from data instead of requiring explicit programming for each circumstance. Machine learning algorithms can be trained to recognise faces in photographs, for instance, while a hard-coded system would be unable to do so.</p>
-										
-										<p>There are two main machine learning techniques:</p>
-										<ol>
-										    <li>Algorithms learn under supervision from input/output pairs that are provided. Examples include recognising scribbled numbers on envelopes, evaluating from medical photographs if tumours are benign, or spotting credit card theft.</li>
-										    <li>Unsupervised learning: No known outcomes are present; only input data is given. It is employed for activities like selecting blog post topics and preference-based client segmentation.</li>
-										</ol>
-										
-										<p>It's imperative to have a thorough understanding of the data and the issue at hand, regardless of the strategy. It's crucial to confirm that the data gathered is pertinent to the issues being addressed and that the machine learning solution is in line with more general goals or corporate objectives.</p>
-										
-										<p>Traditional approaches, with their strict and domain-specific standards, are outclassed by machine learning algorithms' versatility and breadth. Classifiers, as outlined in Miroslav Kubat's book, are the perfect example of this evolution because they convert unprocessed data into useful insights. These classifiers are capable of very accurate predictions thanks to the use of attribute vectors and techniques like iterative specialisation and generalisation.</p>
+											<p>Deep learning's fast advancements have piqued the interest of both students and practitioners. Despite its promise, beginners are typically intimidated by its inherent intricacy. To address this, the authors Wang., et al, 2021 provide the "CNN EXPLAINER," an interactive application meant to help beginners understand convolutional neural networks (CNNs).</p>
+											
+											<p>The instrument was designed in response to problems highlighted during interviews with teachers and student surveys. CNN EXPLAINER provides an integrated model overview that concisely summarises the structure of a CNN. It provides dynamic visual explanations to assist people understand the underlying CNN components. The tool enables users to comprehend the connection between fundamental mathematical operations and overarching model structures by facilitating seamless transitions between various abstraction levels.</p>
+											
+											<p>CNN EXPLAINER illustrates how CNNs transform input photos into categorization predictions. It explains how convolutional layers work using three integrated perspectives, each of which delves further into the convolutional process. The tool seeks to make CNNs more approachable by providing anything from a broad overview of the CNN architecture to deep insights into mathematical processes.</p>
 
-									        <h3 style="color: #CFA7F6;">Reflection & Practical Use:</h3>
-										<p>The transition from hard-coded systems to machine learning highlights the value of adaptability in the era of big data. The need for systems that can learn, adapt, and forecast becomes more and more important as we produce more data every day. Even though it is a straightforward example, Johnny's pie tastes demonstrate the great power of machine learning to make complex decisions based on a variety of factors. It's exciting to think about how these concepts, when scaled up, may transform companies, and alter how we see complicated occurrences. Kubat's thoughts on classifiers provide us a peek into the complex but incredibly powerful world of machine learning and make us aware of the hidden intricacies that enable our current comforts.</p>
-									        <p></p>
+
+									       <h3 style="color: #CFA7F6;">Seminar Activity on Image Recognition with CNN:</h3>
+
+
+											<h3>Objective</h3>
+											<p>Undertake image recognition activities at different layers (reLU, intermediate, etc.). Upload your own image (using similar images - e.g., a car or a teacup - as well as dissimilar images) and test how the CNN can detect objects similar to trained image objects.</p>
+											
+											<h3>Image Testing</h3>
+											<p>Using the CIFAR10-trained model, we evaluated its performance on two external images: an airplane (present in the CIFAR10 labels) and a hat (absent from the CIFAR10 dataset).</p>
+											<img src="images/ML_Unit10_P1.png" alt="Airplane Image">
+											<img src="images/ML_Unit10_P2.png" alt="Hat Image">
+											<p>Upon testing, the model adeptly identified the airplane, showcasing its capability to generalize effectively on familiar categories. Conversely, when presented with the hat, the model faltered, underscoring the limitations tied to its training data. This highlights the importance of having diverse training data when expecting a model to recognize a broader array of objects.</p>
+											
+											<h3>Visualization of Activations</h3>
+											<p>To see the image recognition activities at different layers, particularly focusing on the activations produced by layers like ReLU, we need to visualize the intermediate outputs of the layers in the Convolutional Neural Network (CNN). This will give insight into what features the network is learning at various depths.</p>
+											<p>The steps are as follows:</p>
+											<ul>
+											    <li>Layer Selection: Identification of particular layers, with a focus on those utilising ReLU activations, laying the groundwork for thorough visualisation.</li>
+											    <li>Construction of an Activation Model: Using the Keras framework, a specialised model was built to explicate the intermediate activations, offering a greater understanding of layer-wise processing.</li>
+											    <li>Image Processing: To ensure best compatibility with the model, a thorough preparation strategy was used on the input image, covering critical stages such as scaling, normalisation, and reshaping.</li>
+											    <li>Activation Generation: Using the model and the processed picture, this phase required collecting intermediate outputs that revealed the complex transformations that the image goes through.</li>
+											    <li>Visualisation: As the approach's culmination, this stage involves charting the resultant activations, providing a deep insight into the model's fundamental cognitive operations.</li>
+											</ul>
+											<img src="images/ML_Unit10_P3.png" alt="Visualization 1">
+											<img src="images/ML_Unit10_P4.png" alt="Visualization 2">
+											<img src="images/ML_Unit10_P5.png" alt="Visualization 3">
+											<p>The results show that:</p>
+											<ol>
+											    <li>By examining the feature maps produced by different layers (early layers, intermediate layers, and deeper layers), we can observe how the model processes and recognizes features at varying depths of the network.</li>
+											    <li>Understanding of Feature Extraction: Early layers typically extract low-level features like edges and textures. This was evident in the visualizations of layer 1 and layer 2, where you observed different orientations and colour sensitivities. Intermediate and deeper layers capture higher-level features by combining the low-level features detected earlier. In the visuals of layer 3 and 4, the abstract patterns and broader activations reflect this.</li>
+											    <li>By feeding different images through the network and visualizing their activations, you can understand how the network's recognition activities vary based on the input. This can be especially revealing when using images from categories the model was trained on versus those it wasn't.</li>
+											</ol>
+									
+
+									       <h3 style="color: #CFA7F6;">Reflection & Practical Use:</h3>
+								
+
+
+											<p>Deep learning, particularly convolutional neural networks (CNNs), has revolutionised various sectors in today's data-driven world, from image identification to medical diagnosis. Mastering such strategies is critical for data scientists who want to stay on the cutting edge of innovation. However, even for seasoned specialists, the complexities of CNNs can provide steep learning curves.</p>
+											<p>The emergence of technologies such as "CNN EXPLAINER" has the potential to revolutionise the game. It bridges the theoretical knowledge and practical application gap by providing interactive visual insights. Such technologies not only speed up the learning process for data scientists, but also help them better communicate complicated models to non-technical stakeholders.</p>
+											<p>As the area of data science expands, tools that explain complicated algorithms will be critical in stimulating creativity. By making complex models more accessible, these tools can foster greater collaboration across disciplines and drive further innovation in the application of deep learning.</p>
+
 									
 									       <h3 style="color: #CFA7F6;">References:</h3>
-									 <ol>
-									    <li>Badillo, S. et al. (2020) ‘An introduction to machine learning’, <i>Clinical Pharmacology & Therapeutics</i>, 107(4), pp. 871–885. <a href="https://doi.org/10.1002/cpt.1796">doi:10.1002/cpt.1796</a>.</li>
-									    <li>Fielding, A.H. (1999) ‘An introduction to machine learning methods’, <i>Machine Learning Methods for Ecological Applications</i>, pp. 1–35. <a href="https://doi.org/10.1007/978-1-4615-5289-5_1">doi:10.1007/978-1-4615-5289-5_1</a>.</li>
-									    <li>Müller, A.C. and Guido, S. (2018) ‘Chapter 1’, in <i>Introduction to machine learning with python: A guide for data scientists</i>. Sebastopol, CA: O’Reilly Media, Inc., pp. 1–23.</li>
-									    <li>Kubat, M. (2021) ‘Chapter 1.1’, in <i>An introduction to machine learning</i>. 2nd edn. Springer International Publishing AG, pp. 1–4.</li>
-									</ol>
+									
+											<ul>
+											    <li>Wang, Z.J. et al. (2021) ‘CNN explainer: Learning convolutional neural networks with interactive visualization’, <i>IEEE Transactions on Visualization and Computer Graphics</i>, 27(2), pp. 1396–1406. doi:10.1109/tvcg.2020.3030418.</li>
+											    <li>Chollet, F. (2021) <i>Deep learning with python</i>. Shelter Island, NY: Manning.</li>
+											    <li>Ketkar, N. and Moolayil, J. (2021) <i>Deep learning with python</i> [Preprint]. doi:10.1007/978-1-4842-5364-9.</li>
+											</ul>
 
 									
 								</div>
