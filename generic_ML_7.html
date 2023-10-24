@@ -49,34 +49,71 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1> &#10021; Unit 1 - Introduction to Machine Learning (ML) </h1>
+										<h1> &#10021; Unit 7: Introduction to Artificial Neural Networks (ANNs) </h1>
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
-                                                                 						
-										<p>The goal of machine learning, which lies at the nexus of statistics, AI, and computer science, is to derive information from data. It plays a crucial role in a variety of contemporary applications, including internet buying advice and scientific studies like DNA sequence analysis. The decision criteria used in traditional systems were rigid and domain-specific, and they were hard-coded. Machine learning provides flexibility by allowing algorithms to learn from data instead of requiring explicit programming for each circumstance. Machine learning algorithms can be trained to recognise faces in photographs, for instance, while a hard-coded system would be unable to do so.</p>
-										
-										<p>There are two main machine learning techniques:</p>
-										<ol>
-										    <li>Algorithms learn under supervision from input/output pairs that are provided. Examples include recognising scribbled numbers on envelopes, evaluating from medical photographs if tumours are benign, or spotting credit card theft.</li>
-										    <li>Unsupervised learning: No known outcomes are present; only input data is given. It is employed for activities like selecting blog post topics and preference-based client segmentation.</li>
-										</ol>
-										
-										<p>It's imperative to have a thorough understanding of the data and the issue at hand, regardless of the strategy. It's crucial to confirm that the data gathered is pertinent to the issues being addressed and that the machine learning solution is in line with more general goals or corporate objectives.</p>
-										
-										<p>Traditional approaches, with their strict and domain-specific standards, are outclassed by machine learning algorithms' versatility and breadth. Classifiers, as outlined in Miroslav Kubat's book, are the perfect example of this evolution because they convert unprocessed data into useful insights. These classifiers are capable of very accurate predictions thanks to the use of attribute vectors and techniques like iterative specialisation and generalisation.</p>
+           
+											<p>Machine learning is the process by which a machine (i.e., computer) determines how input data is processed and predicts outcomes when presented with fresh data. A machine learning method based on the notion of a human neuron is known as an artificial neural network (<cite>Han., et al, 2018</cite>).</p>
+											
+											<h3>Single Layer Perceptron (SLP)</h3>
+											<p>In this unit, I learned about the Single Layer Perceptron (SLP). It is a basic form of a perceptron, consisting of one layer connecting inputs and output. It is a feed-forward network where data flows in a single direction without looping back. The perceptron uses weights to determine the importance of each input feature and an adder function to combine the inputs and their respective weights. A bias is added to form the induced local field.</p>
+											
+											<h3>Multilayer Perceptron (MLP)</h3>
+											<p>The Multilayer Perceptron (MLP) is an evolution of the SLP and includes one or more hidden layers between its input and output layers. The number of neurons in the input layer matches the dataset's attributes, while the output layer corresponds to the dataset's class labels.</p>
+											
+											<h3>Initialization & Activation Functions</h3>
+											<p>Proper initialization of weights and biases is crucial for a model's performance. The best approach often depends on the chosen activation function, with specific initialization intervals suggested for functions like tanh and sigmoid. Various activation functions exist, such as the threshold function, which determines a neuron's output based on its induced local field.</p>
+
+
+
+
+									        <h3 style="color: #CFA7F6;">Perceptron Examples:</h3>
+
+											<h3>EXAMPLE 1: SIMPLE PERCEPTRON</h3>
+											<p>Dr. Mike Lakoju's notebook discusses the implementation of a simple perceptron using the Numpy library, emphasizing the need for optimization when dealing with extensive datasets in neural networks. The notebook begins by defining inputs as Numpy arrays with two values: 45 and 25, which are foundational data points for the perceptron. The type and structure of these inputs are verified, and their first value is confirmed as 45. The weights associated with these inputs are defined as Numpy arrays with values 0.7 and 0.1, which are validated as 0.7.</p>
+											<p>The notebook also introduces a sum function to compute the weighted sum of the inputs, which serves as the raw output of the perceptron before any activation function is applied. The dot product is highlighted as a computationally efficient method for calculating the weighted sum, which is crucial when dealing with large datasets.</p>
+											<p>The notebook sets the groundwork for constructing a perceptron by defining its inputs and weights and hinting at the methods for processing these using Numpy's powerful array operations.</p>
+											
+											<h3>EXAMPLE 2: PERCEPTRON & OPERATORS</h3>
+											<p>The code defines the inputs as a matrix containing all possible binary input pairs for the AND operator, with each row representing a distinct input pair. The expected outputs are provided as a vector, mirroring the AND operator's behavior. Two weights are initialized for the perceptron, one for each input, set to 0.0, indicating no bias towards any input. A learning rate of 0.1 is set, which influences the adjustment magnitude of weights during the learning process.</p>
+											<p>An activation function, step_function, is defined, which returns a binary output based on the input's sum of weighted inputs. This step function acts as the threshold mechanism for the perceptron, deciding its final output. A method, cal_output, is introduced to calculate the perceptron's output for a given input instance.</p>
+											<p>The notebook meticulously defines the necessary inputs, outputs, and parameters, and introduces mechanisms to compute the perceptron's output. This groundwork lays the groundwork for training and evaluating the perceptron's accuracy in emulating the AND operator.</p>
+											
+											<h3>EXAMPLE 3: MULTI-LAYER PERCEPTRON</h3>
+											<p>The notebook "Unit07 Ex3 multi-layer Perceptron" introduces the sigmoid function, a widely used activation function in neural networks due to its S-shaped curve. It compresses any input into a value between 0 and 1, with practical examples demonstrating its importance. The inputs for this perceptron are defined as a matrix with all possible binary combinations, suggesting that the perceptron might be trained on logical operators or binary patterns. The shape and content of these inputs are verified to ensure their correctness.</p>
+											<p>The notebook lays the groundwork for a multi-layer perceptron by setting up the necessary functions, parameters, and data structures. It then outlines the architecture of the multi-layer perceptron, suggesting a layered architecture fundamental to deep learning models. The inputs are structured as a matrix embracing all binary combinations, mirroring patterns seen in logical operations. This choice of inputs indicates that the perceptron could be oriented towards understanding binary patterns or logical operators.</p>
+											<p>The notebook serves as a primer, meticulously laying the groundwork for a multi-layer perceptron by establishing the sigmoid function, hinting at the perceptron's architecture, and setting up the inputs. This sets the stage for deeper dives into forward propagation, backpropagation, and the nuances of neural network training.</p>
 
 									        <h3 style="color: #CFA7F6;">Reflection & Practical Use:</h3>
-										<p>The transition from hard-coded systems to machine learning highlights the value of adaptability in the era of big data. The need for systems that can learn, adapt, and forecast becomes more and more important as we produce more data every day. Even though it is a straightforward example, Johnny's pie tastes demonstrate the great power of machine learning to make complex decisions based on a variety of factors. It's exciting to think about how these concepts, when scaled up, may transform companies, and alter how we see complicated occurrences. Kubat's thoughts on classifiers provide us a peek into the complex but incredibly powerful world of machine learning and make us aware of the hidden intricacies that enable our current comforts.</p>
-									        <p></p>
+									
+								                	<p>Artificial Neural Networks (ANNs) have emerged as a paradigm-shifting methodology in data science, offering nuanced insights and predictions across vast datasets. This unit delves into the applicability of ANNs, from the rudimentary Single Layer Perceptron (SLP) to the more sophisticated Multilayer Perceptron (MLP), elucidating their relevance in the empirical world of data science.</p>
+
+											<p>The SLP, analogized to linear regression in traditional statistics, offers a foundational perspective on neural computation, providing an efficient and interpretable model for practical data science tasks.</p>
+											
+											<p>The MLP's layered architecture is primed to extract latent features and nonlinear patterns, making it suitable for various datasets, such as genomic data exploration, time-series forecasting in finance, and deciphering intricate consumer behavior in digital marketing.</p>
+											
+											<p>Dr. Mike Lakoju's work offers a hands-on exploration of ANNs using Python's Numpy library, highlighting the symbiotic relationship between computational efficiency and large-scale data analytics. The practical implementation of the perceptron, optimized using Numpy's array operations, highlights the need for data scientists to understand theoretical underpinnings and be adept at leveraging computational tools for scalable analytics.</p>
+											
+											<p>ANNs, particularly MLPs, are making inroads into diverse sectors, such as healthcare, finance, and e-commerce. Predictive analytics using ANNs in medical imaging aids radiologists in early detection of anomalies, while time-series forecasting aids in stock market predictions, risk assessment, and fraud detection. Furthermore, ANNs provide a resilient framework for continuous learning and adaptation as data scientists grapple with challenges like data drift, concept drift, and the curse of dimensionality.</p>
+											
+											<p>In conclusion, the convergence of ANNs and data science marks a transformative phase in analytics, guiding data scientists towards meaningful insights and actionable results.</p>
+	
 									
 									       <h3 style="color: #CFA7F6;">References:</h3>
-									 <ol>
-									    <li>Badillo, S. et al. (2020) ‘An introduction to machine learning’, <i>Clinical Pharmacology & Therapeutics</i>, 107(4), pp. 871–885. <a href="https://doi.org/10.1002/cpt.1796">doi:10.1002/cpt.1796</a>.</li>
-									    <li>Fielding, A.H. (1999) ‘An introduction to machine learning methods’, <i>Machine Learning Methods for Ecological Applications</i>, pp. 1–35. <a href="https://doi.org/10.1007/978-1-4615-5289-5_1">doi:10.1007/978-1-4615-5289-5_1</a>.</li>
-									    <li>Müller, A.C. and Guido, S. (2018) ‘Chapter 1’, in <i>Introduction to machine learning with python: A guide for data scientists</i>. Sebastopol, CA: O’Reilly Media, Inc., pp. 1–23.</li>
-									    <li>Kubat, M. (2021) ‘Chapter 1.1’, in <i>An introduction to machine learning</i>. 2nd edn. Springer International Publishing AG, pp. 1–4.</li>
-									</ol>
+											<ol>
+											    <li>Han, S.-H. et al. (2018) ‘Artificial Neural Network: Understanding the basic concepts without mathematics’, Dementia and Neurocognitive Disorders, 17(3), p. 83. <a href="https://doi.org/10.12779/dnd.2018.17.3.83" target="_blank">doi:10.12779/dnd.2018.17.3.83</a>.</li>
+											    <li>Goodfellow, I., Bengio, Y. and Courville, A., 2016. Deep Learning. MIT Press.</li>
+											    <li>LeCun, Y., Bengio, Y. and Hinton, G., 2015. Deep learning. Nature, 521(7553), pp.436-444.</li>
+											    <li>Rumelhart, D.E., Hinton, G.E. and Williams, R.J., 1986. Learning representations by back-propagating errors. Nature, 323(6088), pp.533-536.</li>
+											    <li>Bishop, C.M., 1995. Neural Networks for Pattern Recognition. Oxford University Press.</li>
+											    <li>Schmidhuber, J., 2015. Deep learning in neural networks: An overview. Neural Networks, 61, pp.85-117.</li>
+											    <li>Cybenko, G., 1989. Approximation by superpositions of a sigmoidal function. Mathematics of Control, Signals, and Systems, 2(4), pp.303-314.</li>
+											    <li>He, K., Zhang, X., Ren, S. and Sun, J., 2016. Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition, pp.770-778.</li>
+											    <li>Srivastava, N., Hinton, G.E., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R., 2014. Dropout: a simple way to prevent neural networks from overfitting. Journal of Machine Learning Research, 15(1), pp.1929-1958.</li>
+											    <li>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., ... and Polosukhin, I., 2017. Attention is all ...</li>
+											</ol>
+		
 
 									
 								</div>
