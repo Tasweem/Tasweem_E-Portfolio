@@ -49,36 +49,94 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1> &#10021; Unit 1 - Introduction to Machine Learning (ML) </h1>
+										<h1> &#10021; Unit 8: Training an Artificial Neural Network </h1>
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
 
-                                                                 						
-										<p>The goal of machine learning, which lies at the nexus of statistics, AI, and computer science, is to derive information from data. It plays a crucial role in a variety of contemporary applications, including internet buying advice and scientific studies like DNA sequence analysis. The decision criteria used in traditional systems were rigid and domain-specific, and they were hard-coded. Machine learning provides flexibility by allowing algorithms to learn from data instead of requiring explicit programming for each circumstance. Machine learning algorithms can be trained to recognise faces in photographs, for instance, while a hard-coded system would be unable to do so.</p>
-										
-										<p>There are two main machine learning techniques:</p>
-										<ol>
-										    <li>Algorithms learn under supervision from input/output pairs that are provided. Examples include recognising scribbled numbers on envelopes, evaluating from medical photographs if tumours are benign, or spotting credit card theft.</li>
-										    <li>Unsupervised learning: No known outcomes are present; only input data is given. It is employed for activities like selecting blog post topics and preference-based client segmentation.</li>
-										</ol>
-										
-										<p>It's imperative to have a thorough understanding of the data and the issue at hand, regardless of the strategy. It's crucial to confirm that the data gathered is pertinent to the issues being addressed and that the machine learning solution is in line with more general goals or corporate objectives.</p>
-										
-										<p>Traditional approaches, with their strict and domain-specific standards, are outclassed by machine learning algorithms' versatility and breadth. Classifiers, as outlined in Miroslav Kubat's book, are the perfect example of this evolution because they convert unprocessed data into useful insights. These classifiers are capable of very accurate predictions thanks to the use of attribute vectors and techniques like iterative specialisation and generalisation.</p>
+											
+											<p>Backpropagation is a crucial algorithm in training artificial neural networks, particularly in deep learning models. <cite>Munro, 2011</cite> explains backpropagation of error (henceforth BP) as a method for training feed-forward neural networks see Artificial Neural Networks.</p>
+											<p>This unit described BP as an iterative procedure that adjusts network weight parameters according to the gradient of an error measure. The procedure is implemented by computing an error value for each output unit, and by backpropagating the error values through the network.</p>
+											<p>BP aims to minimize the discrepancy between a neural network's predicted output and the actual output using a loss function (<cite>Tamanna,2023</cite>). The training objective is to adjust the network's weights to minimize this loss. The process begins with forward propagation, where input data is used to produce a prediction. The error is then reverse propagated through the network, leading to the computation of the gradient of the loss function with respect to each weight (<cite>Goodfellow,2016</cite>).</p>
+											<p>The subsequent step is weight updating, which uses optimization algorithms like Stochastic Gradient Descent (SGD) to modify weights in the error-reducing direction. The extent of this modification is governed by the learning rate (<cite>Ruder,2016</cite>). Backpropagation's efficiency is its hallmark, facilitating the concurrent optimization of thousands or even millions of weights, making the training of extensive networks viable. Its adaptability is commendable, finding utility across various neural network architectures, from rudimentary feedforward frameworks to intricate structures like convolutional or recurrent neural networks.</p>
+									
 
+										<h3 style="color: #CFA7F6;">E-Portfolio Activity</h3>
+
+											<h3>Overview</h3>
+											<p>Matthew Mayo's article presents a comprehensive overview of the essential principles underlying neural networks. The focus is primarily on the methods utilized to adjust weights through gradient descent and backpropagation. These concepts lie at the heart of deep learning and are of utmost importance for individuals with an interest in this field. By contrasting a single neuron with a complete neural network, the author effectively demonstrates the complexity of the problem. Additionally, the article introduces the concept of the cost function as a means of measuring error and visually representing the problem. The gradient is then introduced as a valuable tool for guiding the path of steepest descent.</p>
+											
+											<h3>Gradient Descent Variants</h3>
+											<p>This article explains the difference between vanilla gradient descent, stochastic gradient descent (SGD), and mini-batch gradient descent in a knowledgeable and neutral tone. It highlights that while vanilla gradient descent is deterministic, which can be both advantageous and disadvantageous, SGD introduces volatility that might appear unpredictable but can aide in escaping local minima and reaching the global minimum. On the other hand, mini-batch gradient descent offers a middle ground by providing a balance between speed and an improved likelihood of finding the global minimum.</p>
+											
+											<h3>Code Description</h3>
+											<p>Description of the Code:
+											The function <code>gradient_descent</code> begins by initializing the slope (m) and Y intercept (b) of our model line, to zero. These values represent the parameters that we want to adjust in order to minimize our cost function. Throughout the iteration process the algorithm updates the values of m and b based on the gradient. The gradient indicates the direction of increase for our cost function. By moving in the direction, the algorithm aims to find the point or minima of the function.</p>
+											
+											<ul>
+											    <li>The mean squared error (MSE) used in this code is a widely-used measure for regression problems. It calculates the squared difference between predicted outputs. A smaller MSE indicates predictions from our model.</li>
+											    <li>The learning rate, a hyperparameter in descent determines how big or small each step during optimization should be. It plays a role in ensuring that the algorithm converges towards a minimum.</li>
+											    <li>In summary, this code provides a demonstration of key concepts in machine learning. It shows how models learn iteratively from data and make predictions.</li>
+											</ul>
+											
+											<h3>Experiments: Gradient descent Cost function </h3>
+											<p>Now, the iteration number and learning_rate is changed to observe how cost decreases.</p>
+											
+											<h4>Case 1:</h4>
+											<p>Iterations is changed from 100 to 200 and learning_rate is kept constant at 0.08.</p>
+											<img src="images/ML_Unit8_P1.png" alt="Graph for Case 1">
+											<p>You may see that:
+											The two curves overlap. This shows that regardless of whether the total run is set to 100 or 200 iterations, the MSE values for the first 100 iterations are nearly identical.
+											This picture makes clear that the gradient descent's behaviour is consistent during the first 100 iterations.</p>
+											
+											<h4>Case 2:</h4>
+											<p>Learning rate is changed from 0.01 to 0.08 and to 0.2 while iterations is kept constant at 0.2.</p>
+											<img src="images/ML_Unit8_P2.png" alt="Graph for Case 2a">
+											<img src="images/ML_Unit8_P3.png" alt="Graph for Case 2b">
+											<img src="images/ML_Unit8_P4.png" alt="Graph for Case 2c">
+											<p>From the graph, we can observe the following:
+											<ul>
+											    <li>Learning rate = 0.01 (green curve): The algorithm converges very slowly. This implies that smaller learning rates may require multiple iterations to reach the optimal solution.</li>
+											    <li>Learning rate = 0.08 (blue curve): The algorithm converges at a decreasing speed, reaching a plateau relatively quickly. This is the ideal learning rate and it seems to strike a good balance between convergence speed and stability.</li>
+											    <li>Learning rate = 0.5 (red curve): Initially the algorithm converges quickly but then begins to oscillate, indicating that the learning rate may be too large. Such oscillations can cause the gradient descent to diverge instead of converge in certain scenarios.</li>
+											</ul>
+											This graph highlights the importance of selecting the appropriate learning rate. Too small, and the algorithm may be slow or never converge. Too large, and the algorithm may oscillate or diverge. Often it's necessary to try different learning rates, as we have done here, to find the best value for a given problem.</p>
+																				
+
+									
 									        <h3 style="color: #CFA7F6;">Reflection & Practical Use:</h3>
-										<p>The transition from hard-coded systems to machine learning highlights the value of adaptability in the era of big data. The need for systems that can learn, adapt, and forecast becomes more and more important as we produce more data every day. Even though it is a straightforward example, Johnny's pie tastes demonstrate the great power of machine learning to make complex decisions based on a variety of factors. It's exciting to think about how these concepts, when scaled up, may transform companies, and alter how we see complicated occurrences. Kubat's thoughts on classifiers provide us a peek into the complex but incredibly powerful world of machine learning and make us aware of the hidden intricacies that enable our current comforts.</p>
-									        <p></p>
+
+											<h2>Gradient Descent in Real-world Scenarios</h2>
+											
+											<p>Gradient descent is a crucial optimization technique used in machine learning models to minimize the difference between predicted and actual values. It involves iterative adjustments to minimize the difference between predicted and actual values, often represented by a cost function like the Mean Squared Error (MSE).</p>
+											
+											<h3>Importance in Real-world Scenarios</h3>
+											<p>This unit and especially the seminar session emphasised about its importance in the real-world scenarios. It plays a pivotal role in several industries for optimization such as predicting product recommendations or stock prices, impacting business outcomes. It is also used in sectors such as manufacturing to optimise production processes by reducing waste or energy usage. It contributes in the optimisation of investment portfolios in the financial sector by balancing rewards against risks. Another one is the healthcare industry where it is used to calibrate medical equipment for optimal performance or to alter therapy settings for maximum efficacy with the least number of negative effects. It also aids in route optimisation in logistics to conserve fuel and minimise delivery times.</p>
+											
+											<p>Gradient descent concepts may be used to any scenario that requires adjusting variables to reach the best possible outcome. However, the choice of learning rate is crucial, as a small rate can lead to slow convergence and require more computational resources, while an overly large rate can cause the model to oscillate or diverge, making it unreliable. Understanding the nuances of gradient descent is essential for data scientists, as real-life data is messy and can throw off optimization processes. Variants of gradient descent, such as stochastic or mini-batch gradient descent, or advanced optimization algorithms like Adam, can help navigate these challenges.</p>
+
+	
 									
 									       <h3 style="color: #CFA7F6;">References:</h3>
-									 <ol>
-									    <li>Badillo, S. et al. (2020) ‘An introduction to machine learning’, <i>Clinical Pharmacology & Therapeutics</i>, 107(4), pp. 871–885. <a href="https://doi.org/10.1002/cpt.1796">doi:10.1002/cpt.1796</a>.</li>
-									    <li>Fielding, A.H. (1999) ‘An introduction to machine learning methods’, <i>Machine Learning Methods for Ecological Applications</i>, pp. 1–35. <a href="https://doi.org/10.1007/978-1-4615-5289-5_1">doi:10.1007/978-1-4615-5289-5_1</a>.</li>
-									    <li>Müller, A.C. and Guido, S. (2018) ‘Chapter 1’, in <i>Introduction to machine learning with python: A guide for data scientists</i>. Sebastopol, CA: O’Reilly Media, Inc., pp. 1–23.</li>
-									    <li>Kubat, M. (2021) ‘Chapter 1.1’, in <i>An introduction to machine learning</i>. 2nd edn. Springer International Publishing AG, pp. 1–4.</li>
-									</ol>
 
-									
+					
+											<ul>
+											    <li>Munro, P. et al. (2011) ‘Backpropagation’, <i>Encyclopedia of Machine Learning</i>, pp. 73–73. doi:10.1007/978-0-387-30164-8_51.</li>
+											    <li>Tamanna (2023) <a href="https://medium.com/@tam.tamanna18/backpropagation-in-neural-networks-a-comprehensive-guide-3d36151b8fb4">Backpropagation in neural networks: A comprehensive guide</a>, Medium. Accessed: 22 October 2023.</li>
+											    <li>Goodfellow, I., Bengio, Y., & Courville, A. (2016). <i>Deep Learning</i>. MIT Press.</li>
+											    <li>Ruder, S. (2016). <i>An overview of gradient descent optimization algorithms</i>. arXiv preprint arXiv:1609.04747.</li>
+											    <li>Bishop, C. M. (2006). <i>Pattern Recognition and Machine Learning</i>. Springer.</li>
+											    <li>Boyd, S., & Vandenberghe, L. (2004). <i>Convex Optimization</i>. Cambridge University Press.</li>
+											    <li>LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. <i>Nature, 521(7553), 436-444</i>.</li>
+											    <li><a href="https://www.kdnuggets.com/2017/10/neural-network-foundations-explained-gradient-descent.html">Neural network foundations explained: Updating weights with gradient descent &amp; backpropagation</a>. KDnuggets. Accessed: 22 October 2023.</li>
+											    <li>Kingma, D. P., & Ba, J. (2014). Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980.</li>
+											    <li>Sutskever, I., Martens, J., Dahl, G., & Hinton, G. (2013). On the importance of initialization and momentum in deep learning. In <i>Proceedings of the 30th International Conference on Machine Learning</i> (pp. 1139-1147).</li>
+											    <li>Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., & Salakhutdinov, R. (2014). Dropout: a simple way to prevent neural networks from overfitting. <i>The Journal of Machine Learning Research, 15(1), 1929-1958</i>.</li>
+											</ul>
+
+
+
+									<p></p><a href="UNIT8 -Gradient descent Cost function .ipynb" download>Click to download notebook for Gradient descent Cost function Experiment code </a><p>
+										
 								</div>
 							</section>
 
