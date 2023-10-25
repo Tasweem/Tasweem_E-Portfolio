@@ -49,36 +49,149 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1> &#10021; Unit 1 - Introduction to Machine Learning (ML) </h1>
+										<h1> &#10021; Unit 9: Introduction to Convolutional Neural Networks (CNNs) </h1>
 										<h3>Outcomes from the Team Exercises and activites</h3>
 									</header>
-
-                                                                 						
-										<p>The goal of machine learning, which lies at the nexus of statistics, AI, and computer science, is to derive information from data. It plays a crucial role in a variety of contemporary applications, including internet buying advice and scientific studies like DNA sequence analysis. The decision criteria used in traditional systems were rigid and domain-specific, and they were hard-coded. Machine learning provides flexibility by allowing algorithms to learn from data instead of requiring explicit programming for each circumstance. Machine learning algorithms can be trained to recognise faces in photographs, for instance, while a hard-coded system would be unable to do so.</p>
-										
-										<p>There are two main machine learning techniques:</p>
-										<ol>
-										    <li>Algorithms learn under supervision from input/output pairs that are provided. Examples include recognising scribbled numbers on envelopes, evaluating from medical photographs if tumours are benign, or spotting credit card theft.</li>
-										    <li>Unsupervised learning: No known outcomes are present; only input data is given. It is employed for activities like selecting blog post topics and preference-based client segmentation.</li>
-										</ol>
-										
-										<p>It's imperative to have a thorough understanding of the data and the issue at hand, regardless of the strategy. It's crucial to confirm that the data gathered is pertinent to the issues being addressed and that the machine learning solution is in line with more general goals or corporate objectives.</p>
-										
-										<p>Traditional approaches, with their strict and domain-specific standards, are outclassed by machine learning algorithms' versatility and breadth. Classifiers, as outlined in Miroslav Kubat's book, are the perfect example of this evolution because they convert unprocessed data into useful insights. These classifiers are capable of very accurate predictions thanks to the use of attribute vectors and techniques like iterative specialisation and generalisation.</p>
-
-									        <h3 style="color: #CFA7F6;">Reflection & Practical Use:</h3>
-										<p>The transition from hard-coded systems to machine learning highlights the value of adaptability in the era of big data. The need for systems that can learn, adapt, and forecast becomes more and more important as we produce more data every day. Even though it is a straightforward example, Johnny's pie tastes demonstrate the great power of machine learning to make complex decisions based on a variety of factors. It's exciting to think about how these concepts, when scaled up, may transform companies, and alter how we see complicated occurrences. Kubat's thoughts on classifiers provide us a peek into the complex but incredibly powerful world of machine learning and make us aware of the hidden intricacies that enable our current comforts.</p>
-									        <p></p>
+	
+											                                                                 						
+											    <p>A Convolutional neural network (CNN) is a neural network that has one or more convolutional layers and are used mainly for image processing, classification, segmentation and for other auto correlated data.</p>
+											    <p>Convolutional Neural Networks (CNNs) are a powerful tool in deep learning and computer vision, revolutionizing image recognition tasks like classification, object detection, and facial recognition. <span class="citation">(LeCun, et al., 2015)</span>.</p>
+											    <p>As stated by Thomas, 2019, CNNs excel in image classification, like identifying satellite images or handwritten characters. They're also useful in image segmentation and signal processing. While they aid in NLP and speech, RNNs are often preferred. U-Net architectures, resembling a "U", suit tasks where output and input sizes match, such as image segmentation.</p>
+											    <p>CNNs are designed to learn spatial hierarchies of features automatically and adaptively from images through convolutional layers, which filter inputs for useful information. They can reduce the number of parameters without sacrificing performance by down sampling the spatial dimensions of the input through shared weights in convolutional layers and pooling operations. <span class="citation">(Krizhevsky et al., 2012)</span>.</p>
+											    <p>Advancements in CNN architectures, such as ResNet, Inception, and DenseNet, have further pushed the boundaries of image recognition tasks. As deep learning continues to evolve, CNNs remain at the forefront, playing a pivotal role in the ongoing revolution in computer vision.</p>
+											    
+									        <h3 style="color: #CFA7F6;"> E-Portfolio Activity:</h3>
 									
-									       <h3 style="color: #CFA7F6;">References:</h3>
-									 <ol>
-									    <li>Badillo, S. et al. (2020) ‘An introduction to machine learning’, <i>Clinical Pharmacology & Therapeutics</i>, 107(4), pp. 871–885. <a href="https://doi.org/10.1002/cpt.1796">doi:10.1002/cpt.1796</a>.</li>
-									    <li>Fielding, A.H. (1999) ‘An introduction to machine learning methods’, <i>Machine Learning Methods for Ecological Applications</i>, pp. 1–35. <a href="https://doi.org/10.1007/978-1-4615-5289-5_1">doi:10.1007/978-1-4615-5289-5_1</a>.</li>
-									    <li>Müller, A.C. and Guido, S. (2018) ‘Chapter 1’, in <i>Introduction to machine learning with python: A guide for data scientists</i>. Sebastopol, CA: O’Reilly Media, Inc., pp. 1–23.</li>
-									    <li>Kubat, M. (2021) ‘Chapter 1.1’, in <i>An introduction to machine learning</i>. 2nd edn. Springer International Publishing AG, pp. 1–4.</li>
-									</ol>
+											      <h3>Part1- Imports:</h3>
+											      <p>The necessary libraries were uploaded.</p>
+											      <p>Seeds were set for random number generators to ensure that the program's output is reproducible, which is important for debugging and for scientific research where results need to be replicable.</p>
+											      <img src="images/ML_Unit6_P1.jpg" alt="PIC 1" title="PIC 1">
+											      <p>This code sets up an environment for working with neural networks in Keras, a high-level neural networks API running on top of TensorFlow. The dataset is the CIFAR-10, a popular dataset used in machine learning and computer vision.</p>
+										  	      <p>We also set up up all the necessary libraries and functions for working with neural networks in Keras and TensorFlow, and for working with images and datasets.</p>
+											      <p>Pandas is widely used for tasks such as data cleaning, exploration, and analysis, and it provides data structures that make it easy to work with structured data, like CSV files, Excel spreadsheets, SQL tables, and more.</p>
+											      <img src="images/ML_Unit6_P2.jpg" alt="PIC 2" title="PIC 2">
+											    
+											       <h3>Part 2- Get the dataset:</h3>
+											       <p>Now, the dataset is set as a tuple.</p>
+											       <p>A tuple is a collection of ordered items. Tuples are similar to lists, but they are immutable, meaning that once a tuple is created, its elements cannot be changed.</p>
+											       <p>This line of code is using the cifar10.load_data() function from Keras to load the CIFAR-10 dataset. The load_data() function returns two tuple: the training data and the test data.</p>
+											       <img src="images/ML_Unit6_P3.jpg" alt="PIC 3" title="PIC 3">
+											    
+											       <h3>Part 3- Constants:</h3>
+											       <p>This line of code defines a list named LABEL_NAMES which contains strings representing the names of the ten classes in the CIFAR-10 dataset:</p>
+											       <img src="images/ML_Unit6_P4.jpg" alt="PIC 4" title="PIC 4">
+											       <p>Each name corresponds to a class in the CIFAR-10 dataset. The index of each name in the list corresponds to the label number for that class in the dataset. For example, 'airplane' corresponds to label 0, 'automobile' corresponds to label 1, and so on. This list can be used to map the numeric labels in the dataset to human-readable names for each class.</p>
+												
+									                        <h3>Part 4 – Exploring the data:</h3>
+												
+												<p>For the CIFAR-10 dataset, <code>x_train_all</code> should have the shape (50000, 32, 32, 3). This means there are 50,000 images in the training dataset, and each image is 32 pixels in height, 32 pixels in width, and has 3 color channels (RGB).</p>
+												<img src="images/ML_Unit6_P5.jpg" alt="PIC 5" title="PIC 5">
+												
+												<p><code>x_train_all[0]</code> will return the first image in the <code>x_train_all</code> NumPy array, which contains the training images for the CIFAR-10 dataset. The result will be a 3-dimensional NumPy array of shape (32, 32, 3), which represents an image that is 32 pixels in height, 32 pixels in width, and has 3 color channels (RGB). Each pixel is represented by a list of three integer values ranging from 0 to 255, corresponding to the red, green, and blue color channels, respectively. For example, a pixel with the value [255, 0, 0] would be pure red, while a pixel with the value [0, 255, 0] would be pure green.</p>
+												<img src="images/ML_Unit6_P6.jpg" alt="PIC 6" title="PIC 6">
+												
+												<p><code>x_train_all[0].shape</code> will return the shape of the first image in the <code>x_train_all</code> array. For the CIFAR-10 dataset, each image is 32 pixels in height, 32 pixels in width, and has 3 color channels (RGB). So the shape of <code>x_train_all[0]</code> should be (32, 32, 3).</p>
+												<img src="images/ML_Unit6_P7.jpg" alt="PIC 7" title="PIC 7">
+												
+												<p>This code will convert the first image from the <code>x_train_all</code> dataset into a format that can be displayed, and then display it.</p>
+												<img src="images/ML_Unit6_P8.jpg" alt="PIC 8" title="PIC 8">
+												
+												<p>This line of code will use Matplotlib's imshow function to display the first image from the <code>x_train_all</code> dataset.</p>
+												<img src="images/ML_Unit6_P9.jpg" alt="PIC 9" title="PIC 9">
+												
+												<p><code>y_train_all.shape</code> will return the shape of the <code>y_train_all</code> NumPy array, which contains the labels for the training images in the CIFAR-10 dataset.</p>
+												<img src="images/ML_Unit6_P10.jpg" alt="PIC 10" title="PIC 10">
+												
+												<p>For the CIFAR-10 dataset, there are 50,000 training images, so <code>y_train_all</code> should be a 2-dimensional array with shape (50000, 1). This means there are 50,000 labels, and each label is a single integer value that represents the class of the corresponding image in <code>x_train_all</code>. The classes are numbered from 0 to 9, where each number corresponds to one of the 10 classes in the CIFAR-10 dataset ('airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck').</p>
+												<img src="images/ML_Unit6_P11.jpg" alt="PIC 11" title="PIC 11">
+												
+												<p>Using the syntax ’label names’ to get the actual names of classes. <code>LABEL_NAMES[y_train_all[0][0]]</code> will return the name of the class corresponding to the label of the first image in the <code>y_train_all</code> dataset.</p>
+												<img src="images/ML_Unit6_P12.jpg" alt="PIC 12" title="PIC 12">
+												
+												<p><code>x_train_all.shape</code> will return the shape of the <code>x_train_all</code> NumPy array, which contains the training images for the CIFAR-10 dataset. This means there are 50,000 images in the training dataset, and each image is 32 pixels in height, 32 pixels in width, and has 3 color channels (RGB).</p>
+												<img src="images/ML_Unit6_P13.jpg" alt="PIC 13" title="PIC 13">
+												
+												<p>This line of code unpacks the shape of <code>x_train_all</code> into four variables: number_of_images, x, y, and c. Then, it prints out these values in a formatted string. Here's what each variable represents:</p>
+												<ul>
+												    <li>number_of_images: The total number of images in the dataset (should be 50,000 for CIFAR-10).</li>
+												    <li>x: The width of each image in pixels (should be 32 for CIFAR-10).</li>
+												    <li>y: The height of each image in pixels (should be 32 for CIFAR-10).</li>
+												    <li>c: The number of color channels in each image (should be 3 for CIFAR-10, corresponding to red, green, and blue).</li>
+												</ul>
+												<img src="images/ML_Unit6_P14.jpg" alt="PIC 14" title="PIC 14">
+												
+												<p><code>x_test.shape</code> will return the shape of the <code>x_test</code> NumPy array, which contains the test images for the CIFAR-10 dataset. For the CIFAR-10 dataset, <code>x_test</code> should have the shape (10000, 32, 32, 3). This means there are 10,000 images in the test dataset, and each image is 32 pixels in height, 32 pixels in width, and has 3 color channels (RGB).</p>
+												<img src="images/ML_Unit6_P15.jpg" alt="PIC 15" title="PIC 15">
+									
+
+												<h3>Part 5- Preprocess Data:</h3>
+												
+												<p>We then normalize the training images. The pixel values in the images are integers ranging from 0 to 255. Dividing by 255.0 scales these values to be in the range [0, 1], which is a common preprocessing step when working with image data. It helps the model to converge faster and can sometimes improve performance. The test images are then normalized in the same way as the training images.</p>
+												
+												<p>A function in Keras is used to convert a class vector (integers) to binary class matrix. This is used for categorical crossentropy, which is a loss function used for classification tasks. <code>y_cat_train_all = to_categorical(y_train_all, 10)</code> converts the class labels in <code>y_train_all</code> into one-hot encoded format with 10 classes, since CIFAR-10 has 10 classes (0 to 9). After this operation, <code>y_cat_train_all</code> will be a 2D NumPy array of shape (50000, 10). Each row in <code>y_cat_train_all</code> will be a one-hot encoded vector representing the class label of the corresponding image in <code>x_train_all</code>. The <code>y_test</code> array of class labels is also converted in Keras into one-hot encoded format. This is the array that contains the one-hot encoded labels for the training data.</p>
+												<img src="images/ML_Unit6_P16.jpg" alt="PIC 16" title="PIC 16">
+												
+												<h3>Part 6- Creating the validation set:</h3>
+												
+												<p>We now create a validation dataset from the first 10,000 examples of the training dataset. The <code>VALIDATION_SIZE</code> is set to 10,000, so “<code>x_val</code>” will be a subset of “<code>x_train_all</code>” that includes the first 10,000 images, and “<code>y_val_cat</code>” will be a subset of “<code>y_cat_train_all</code>” that includes the first 10,000 one-hot encoded labels. The codes above are then used to create the final training dataset by taking all the examples from the training dataset (<code>x_train_all</code> and <code>y_cat_train_all</code>) except the first 10,000 examples that were used for validation. These new variables, <code>x_train</code> and <code>y_cat_train</code>, will be used for training the model, while <code>x_val</code> and <code>y_val_cat</code> will be used for validating the model during training to monitor performance and prevent overfitting.</p>
+												<img src="images/ML_Unit6_P17.jpg" alt="PIC 17" title="PIC 17">
+												
+												<h3>Part 7 - Building the model:</h3>
+												
+												<p>This code defines a convolutional neural network (CNN) model using Keras' Sequential API. The model consists of several layers as follows:</p>
+												<ul>
+												    <li>First set of layers:
+												        <ul>
+												            <li>Convolutional layer with 32 filters, each of size (4, 4), activation function 'ReLU' and input shape (32, 32, 3).</li>
+												            <li>Max pooling layer with pool size (2, 2).</li>
+												        </ul>
+												    </li>
+												    <li>Second set of layers:
+												        <ul>
+												            <li>Another convolutional layer with 32 filters, each of size (4, 4) and activation function 'ReLU'. Note that it's not necessary to define the input shape again, as Keras is able to automatically infer the shape from the previous layer.</li>
+												            <li>Another max pooling layer with pool size (2, 2).</li>
+												        </ul>
+												    </li>
+												    <li>Flattening:
+												        <ul>
+												            <li>Flatten layer to convert the 3D output from the previous layer into a 1D array.</li>
+												        </ul>
+												    </li>
+												    <li>Dense layers:
+												        <ul>
+												            <li>Dense (fully connected) hidden layer with 256 neurons and activation function 'ReLU'.</li>
+												            <li>Final dense layer with 10 neurons (corresponding to 10 classes) and activation function 'softmax'. This layer will output the probabilities for each class.</li>
+												        </ul>
+												    </li>
+												</ul>
+												<p>The model is compiled with the categorical crossentropy loss function, 'adam' optimizer, and accuracy as the metric to be evaluated during training. The model is now ready to be trained on the training data.</p>
+												<img src="images/ML_Unit6_P18.jpg" alt="PIC 18" title="PIC 18">
+												
+												<p><code>model.summary()</code> is a method provided by Keras that prints a summary of the neural network model. It is very helpful to understand the structure of the neural network and to verify that it is as expected.</p>
+												<img src="images/ML_Unit6_P19.jpg" alt="PIC 19" title="PIC 19">
+												
+																					
+																					
+									
+									<h3 style="color: #CFA7F6;">Reflection:</h3>
+
+											<p>The complexity of CNNs, including convolutional layers, filters, pooling mechanisms, and the amalgam of neurons and connections, was very overwhelming. The mathematical foundation behind CNNs and the understanding of the algorithm was also a challenge as it was very complex. The road to understanding and mastering CNNs was filled with steep learning curves.</p>
+											
+											<p>However, as I delved deeper into the mathematics and algorithms of the CNN, I could see its transformative power. The real-world applications, ranging from facial recognition to medical imaging, demonstrated the technology's enormous influence. This potential kept me fascinated, eager to learn more, and willing to handle the complexity of my first encounter with CNNs.</p>
+											
+											<p>Reflecting on that first phase, I realise that comprehending CNNs, or any complex notion for that matter, is as much about embracing the unknown as it is about the search of knowledge.</p>
 
 									
+									<h3 style="color: #CFA7F6;">References:</h3>
+	
+											<ol>
+											    <li>MIAP, C.T.Bs.Hons. (2019) An introduction to Convolutional Neural Networks, Medium. Available at: <a href="https://towardsdatascience.com/an-introduction-to-convolutional-neural-networks-eb0b60b58fd7" target="_blank">https://towardsdatascience.com/an-introduction-to-convolutional-neural-networks-eb0b60b58fd7</a> (Accessed: 20 October 2023).</li>
+											    <li>LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. Nature, 521(7553), 436-444.</li>
+											    <li>Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep Learning. MIT Press.</li>
+											    <li>Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. In Advances in Neural Information Processing Systems (pp. 1097-1105).</li>
+											    <li>Simonyan, K., & Zisserman, A. (2015). Very deep convolutional networks for large-scale image recognition. In 3rd International Conference on Learning Representations.</li>
+											</ol>
+																				
 								</div>
 							</section>
 
